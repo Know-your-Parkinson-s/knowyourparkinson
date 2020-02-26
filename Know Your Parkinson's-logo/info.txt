@@ -1,0 +1,14 @@
+
+Hope you enjoy your new logo, here are the people that
+made your beautiful logo happen :)
+font name: WorkSans-Regular
+font link: https://fonts.google.com/specimen/Work+Sans
+font author: Wei Huang
+font author site: 
+Slogan Font: Questrial-Regular.otf
+
+icon designer: Diego Naive
+icon designer link: /diegonaive
+        
+{"bg":"#D85A3B","icon":"#D8C93B","font":"#ffffff","slogan":"#ffffff"}
+      
