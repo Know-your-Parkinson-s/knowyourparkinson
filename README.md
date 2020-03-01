@@ -41,4 +41,4 @@ A web application to help you detect your Parkinson's Symptoms early
 - Send pull requests to the main org repo, this will check if merges are compatible
 - Everytime before starting work, it's good practice to pull and check if someone has made changes to the repo
 - I know using Git can be difficult and I'm no expert either, but using GitHub desktop will make life easy if you don't already know Git. 
-> I myself use GH Desktop because it's faster and easier to use.
+> I use GH Desktop because it's faster and easier to use.
