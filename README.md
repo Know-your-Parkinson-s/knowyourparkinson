@@ -14,7 +14,7 @@ A web application to help you detect your Parkinson's Symptoms early
    - `py -m venv venv` -> python3
    - `python3 -m venv venv` -> MacOS
 5. Activate Virtual Environment <- _You'll have to repeat this step everytime_
-   - `venv\Scripts\activate` -> Windows _Yes, the **S** is uppercase_
+   - `venv\Scripts\activate` -> Windows (_Yes, the **S** is uppercase_)
    - `venv/bin/activate` -> MacOS
    - Your terminal should say _venv_ at the start of the PATH
    - ``` python
