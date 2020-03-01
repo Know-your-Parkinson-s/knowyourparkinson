@@ -24,7 +24,8 @@ A web application to help you detect your Parkinson's Symptoms early
           debug until you see venv
      ```
 6. Install requirements <- _You'll have to install requirements everytime there's a change in the requirements.txt file_
-   - ```pip install -r requirements.txt```
+   - ```pip install -r requirements.txt``` <- _If using python3_
+   - ```pypy3 -m pip install -r requirements.txt``` <- _If using pypy_
 7. Do some magic shit
    - To run the server and check the app:
      - ```set FLASK_APP=park.py``` <- _Repeat everytime you have a new terminal_
