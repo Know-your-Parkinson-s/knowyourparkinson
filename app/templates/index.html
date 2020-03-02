@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Stock Market Prediction</title>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+		<link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon-32x32.png') }}">
+		<link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicon-16x16.png') }}">
+
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	</head>
+
+	<body>
+
+		<div id="graph">
+			<img src="{{url_for('static', filename='smallGraph.svg')}}" />
+		</div>
+
+		<h2 id="mainText">
+			BeanStock - Stock Market Forecasting Using Predictive Analysis
+		</h2>
+
+		<div id="line"></div>
+
+		<p id="nextText">
+			In this highly volatile market, there is an apparent need for a robust system of advice that can be achieved through the tools provided by Data Analysis. Using this Stock Market Forecastor, you can find stocks which are likely to earn profits.
+		</p>
+
+		<form class="form my-2 my-lg-0" method="POST" id="searchbar">
+			<input class="form-control mr-sm-2" type="search" placeholder="Company Symbol" aria-label="Search" style="border-radius: 22px;" name="symbol"><br>
+			<div id="termbutton">
+				<button class="btn my-2 my-sm-0" type="submit" name="prediction" style="color: #d1d1d1; border-color: #d1d1d1; border-radius: 22px; color: #151418; margin-right: 5px" value="short">Short-Term</button>
+				<button class="btn my-2 my-sm-0" type="submit" name="prediction" style="color: #d1d1d1; border-color: #d1d1d1; border-radius: 22px; color: #151418" value="long">Long-Term</button>
+			</div>
+		</form>
+
+	</body>
+
+</html>

@@ -1,0 +1,220 @@
+body{
+	background-color: #232328;
+}
+
+.navbar{
+	background-color: #151418;
+	box-shadow: 0 1px 20px rgba(0, 0, 0, 0.5);
+}
+
+.alert-auto {
+	display:inline-block;
+}
+
+#graph{
+	height: 50px;
+	width: 100px;
+	/* display: block; */
+	max-width: 500px;
+	margin: auto;
+	margin-top: 11%;
+}
+
+#mainText{
+	color: #d1d1d1;
+	font-family: arial;
+	text-align: center;
+	margin-top: 5%;
+}
+
+#line{
+	height: 2px;
+	width: 50%;
+	background-color:#0353B3;
+	margin-left: 25%;
+	margin-top: 2%;
+	/*box-shadow: 2px 1px 10px rgba(0, 0, 0, 0.6);*/
+}
+
+#nextText{
+	color: #d1d1d1;
+	font-family: arial;
+	text-align: center;
+	margin-top: 2%;
+	padding-right: 15%;
+	padding-left: 15%;
+	margin-bottom: 2%;
+}
+
+#getStarted{
+	margin: auto;
+	display: block;
+	border-radius: 30px;
+	box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.8);
+	margin-top: 6%;
+}
+
+#searchbar{
+	max-width: 380px;
+	margin: auto;
+}
+
+#termbutton{
+	padding-left: 21%;
+}
+
+#technicalIndicator{
+	margin-top: 3%;
+	margin-left: 4%;
+}
+
+#chart{
+	margin-top: 2%;
+	margin-left: 3%;
+}
+
+#chart2{
+	margin-top: 2%;
+	margin-right: 3%;
+}
+
+#right{
+	margin-right: 3%;
+}
+
+#buyBtn{
+	margin: auto;
+	display: block;
+	border-radius: 30px;
+	box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.8);
+	margin-top: 30%;
+	margin-left: 53%;
+	width: 120px;
+}
+
+#sellBtn{
+	margin: auto;
+	display: block;
+	border-radius: 30px;
+	box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.8);
+	margin-top: 30%;
+	margin-left: 28%;
+	width: 120px;
+}
+
+#holdBtn{
+	margin: auto;
+	display: block;
+	border-radius: 30px;
+	box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.8);
+	margin-top: 30%;
+	margin-right: 43%;
+	width: 120px;
+	background-color: #00c853;
+}
+
+@media screen and (max-width: 960px){
+
+	#graph{
+		padding-bottom: 7%;
+	}
+
+	#mainText{
+		padding-right: 10%;
+		padding-left: 10%;
+		padding-bottom: 1%;
+	}
+
+	#line{
+		margin-bottom: 3%;
+	}
+
+	#nextText{
+		padding-bottom: 1%;
+	}
+
+}
+
+@media screen and (max-width: 800px){
+
+	#graph{
+		padding-bottom: 10%;
+	}
+
+	#mainText{
+		padding-right: 10%;
+		padding-left: 10%;
+		padding-bottom: 2%;
+	}
+
+	#line{
+		margin-bottom: 4%;
+	}
+
+	#nextText{
+		padding-bottom: 3%;
+	}
+
+	#chart2{
+		margin-left: 3%;
+	}
+
+}
+
+@media screen and (max-width: 768px){
+	#chart2{
+		margin-left: 3%;
+	}
+}
+
+@media screen and (max-width: 630px){
+
+	#graph{
+		padding-bottom: 13%;
+	}
+
+	#mainText{
+		padding-right: 10%;
+		padding-left: 10%;
+		padding-bottom: 4%;
+	}
+
+	#line{
+		margin-bottom: 5%;
+	}
+
+	#nextText{
+		padding-bottom: 5%;
+	}
+
+	#chart2{
+		margin-left: 3%;
+	}
+
+}
+
+@media screen and (max-width: 530px){
+
+	#graph{
+		padding-bottom: 18%;
+	}
+
+	#mainText{
+		padding-right: 10%;
+		padding-left: 10%;
+		padding-bottom: 4%;
+	}
+
+	#line{
+		margin-bottom: 5%;
+	}
+
+	#nextText{
+		padding-bottom: 5%;
+	}
+
+	#chart2{
+		margin-left: 3%;
+	}
+
+}
