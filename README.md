@@ -1,4 +1,4 @@
-# Know Your Parkinson
+# Know Your Parkinson's
 ![Banner](https://github.com/Know-your-Parkinson-s/knowyourparkinson/raw/master/app/static/logos/cover.png)
 A web application to help you detect your Parkinson's Symptoms early
 
