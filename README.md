@@ -1,5 +1,5 @@
 # Know Your Parkinson
-![Banner](https://raw.githubusercontent.com/Know-your-Parkinson-s/knowyourparkinson/master/Know%20Your%20Parkinson's-logo/cover.png)
+![Banner](https://github.com/Know-your-Parkinson-s/knowyourparkinson/raw/master/app/static/logos/cover.png)
 A web application to help you detect your Parkinson's Symptoms early
 
 ## Steps to start:
