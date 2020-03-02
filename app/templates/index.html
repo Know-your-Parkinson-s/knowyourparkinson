@@ -1,45 +1,192 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>Stock Market Prediction</title>
+<html lang="en">
 
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-		<link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon-32x32.png') }}">
-		<link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicon-16x16.png') }}">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-	</head>
+	<!-- Bulma CSS -->
+	<link href="{{ url_for('static', filename='css/bulma.css')}}" rel="stylesheet">
 
-	<body>
+	<!-- Theme CSS -->
+	<link href="{{ url_for('static', filename='css/freelancer.css')}}" rel="stylesheet">
 
-		<div id="graph">
-			<img src="{{url_for('static', filename='smallGraph.svg')}}" />
+	<!-- Custom CSS -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/error.css')}}">
+
+	<!-- Custom fonts for this theme -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
+		type="text/css">
+
+	<!-- Favicons -->
+	<link rel="apple-touch-icon" sizes="57x57"
+		href="{{ url_for('static', filename = 'logos/favicons/apple-icon-57x57.png')}}">
+	<link rel="apple-touch-icon" sizes="60x60"
+		href="{{ url_for('static', filename = 'logos/favicons/apple-icon-60x60.png')}}">
+	<link rel="apple-touch-icon" sizes="60x60"
+		href="{{ url_for('static', filename = 'logos/favicon/apple-icon-72x72.png')}}">
+	<link rel="apple-touch-icon" sizes="60x60"
+		href="{{ url_for('static', filename = 'logos/favicons/apple-icon-76x76.png')}}">
+	<link rel="apple-touch-icon" sizes="60x60"
+		href="{{ url_for('static', filename = 'logos/favicons/apple-icon-114x114.png')}}">
+	<link rel="apple-touch-icon" sizes="60x60"
+		href="{{ url_for('static', filename = 'logos/favicons/apple-icon-120x120.png')}}">
+	<link rel="apple-touch-icon" sizes="60x60"
+		href="{{ url_for('static', filename = 'logos/favicons/apple-icon-144x144.png')}}">
+	<link rel="apple-touch-icon" sizes="60x60"
+		href="{{ url_for('static', filename = 'logos/favicons/apple-icon-152x152.png')}}">
+	<link rel="apple-touch-icon" sizes="60x60"
+		href="{{ url_for('static', filename = 'logos/favicons/apple-icon-180x180.png')}}">
+	<link rel="apple-touch-icon" sizes="60x60"
+		href="{{ url_for('static', filename = 'logos/favicons/apple-icon-192x192.png')}}">
+	<link rel="icon" type="image/png" sizes="32x32"
+		href="{{ url_for('static', filename = 'logos/favicons/favicon-32x32.png')}}">
+	<link rel="icon" type="image/png" sizes="96x96"
+		href="{{ url_for('static', filename = 'logos/favicons/favicon-96x96.png')}}">
+	<link rel="icon" type="image/png" sizes="16x16"
+		href="{{ url_for('static', filename = 'logos/favicons/favicon-16x16.png')}}">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+
+	<title>{{ title }}</title>
+
+</head>
+
+<body>
+	<!-- <div class="container-fluid"> -->
+	<!-- Navigation -->
+	<!-- <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+			<div class="container">
+				<a class="navbar-brand js-scroll-trigger" href="#page-top">Know Your Parkinson's</a>
+				<button
+					class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded"
+					type="button" data-toggle="collapse" data-target="#navbarResponsive"
+					aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+					Menu
+					<i class="fas fa-bars"></i>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarResponsive">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item mx-0 mx-lg-1">
+							<a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+								href="#portfolio">Portfolio</a>
+						</li>
+						<li class="nav-item mx-0 mx-lg-1">
+							<a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a>
+						</li>
+						<li class="nav-item mx-0 mx-lg-1">
+							<a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Contact</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav> 
+	</div> -->
+
+	<nav class="navbar" role="navigation" aria-label="main navigation">
+		<div class="navbar-brand">
+			<a class="navbar-item" href="https://bulma.io">
+				<img src="{{ url_for('static', filename='logos/vector/isolated-monochrome-black.svg')}}" width="64">
+			</a>
+
+			<a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+				data-target="navbarBasicExample">
+				<span aria-hidden="true"></span>
+				<span aria-hidden="true"></span>
+				<span aria-hidden="true"></span>
+			</a>
 		</div>
 
-		<h2 id="mainText">
-			BeanStock - Stock Market Forecasting Using Predictive Analysis
-		</h2>
+		<div id="navbarBasicExample" class="navbar-menu">
+			<div class="navbar-start">
+				<a class="navbar-item">
+					Home
+				</a>
 
-		<div id="line"></div>
+				<a class="navbar-item">
+					Documentation
+				</a>
 
-		<p id="nextText">
-			In this highly volatile market, there is an apparent need for a robust system of advice that can be achieved through the tools provided by Data Analysis. Using this Stock Market Forecastor, you can find stocks which are likely to earn profits.
-		</p>
+				<div class="navbar-item has-dropdown is-hoverable">
+					<a class="navbar-link">
+						More
+					</a>
 
-		<form class="form my-2 my-lg-0" method="POST" id="searchbar">
-			<input class="form-control mr-sm-2" type="search" placeholder="Company Symbol" aria-label="Search" style="border-radius: 22px;" name="symbol"><br>
-			<div id="termbutton">
-				<button class="btn my-2 my-sm-0" type="submit" name="prediction" style="color: #d1d1d1; border-color: #d1d1d1; border-radius: 22px; color: #151418; margin-right: 5px" value="short">Short-Term</button>
-				<button class="btn my-2 my-sm-0" type="submit" name="prediction" style="color: #d1d1d1; border-color: #d1d1d1; border-radius: 22px; color: #151418" value="long">Long-Term</button>
+					<div class="navbar-dropdown">
+						<a class="navbar-item">
+							About
+						</a>
+						<a class="navbar-item">
+							Jobs
+						</a>
+						<a class="navbar-item">
+							Contact
+						</a>
+						<hr class="navbar-divider">
+						<a class="navbar-item">
+							Report an issue
+						</a>
+					</div>
+				</div>
 			</div>
-		</form>
 
-	</body>
+			<div class="navbar-end">
+				<div class="navbar-item">
+					<div class="buttons">
+						<a class="button is-primary">
+							<strong>Sign up</strong>
+						</a>
+						<a class="button is-light">
+							Log in
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container-fluild">
+		<img src="{{ url_for('static', filename = 'logos/cover.png')}}" class="img-fluid" alt="Responsive image">
+	</div>
+
+	<!-- Slide 2 -->
+	<section class="hero is-info is-large">
+		<div class="hero-body">
+			<div class="container">
+				<h1 class="Slide 2">
+					Large title
+				</h1>
+				<h2 class="subtitle">
+					Large subtitle
+				</h2>
+			</div>
+		</div>
+	</section>
+
+	<!-- Custom scripts for this template -->
+	<script src="{{ url_for('static', filename='javascript/freelancer.js')}}"></script>
+
+	<!-- Plugin JavaScript -->
+	<script src="{{ url_for('static', filename='vendor/jquery.easing.js')}}"></script>
+
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+		crossorigin="anonymous"></script>
+</body>
 
 </html>

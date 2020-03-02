@@ -7,7 +7,7 @@ import json
 @app.route("/")
 @app.route("/index")
 def index():
-    return ('Hello World')
+    return render_template("index.html", title='Home')
 
 
 @app.route('/debug-sentry')
