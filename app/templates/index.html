@@ -166,11 +166,27 @@
 		<div class="hero-body">
 			<div class="container">
 				<h1 class="Slide 2">
-					Large title
+					To get Started
 				</h1>
 				<h2 class="subtitle">
-					Large subtitle
+					Select your Age Group
 				</h2>
+				<form method="POST" action=" {{ url_for('tests') }}">
+					<div class="form-row align-items-center">
+						<div class="col-auto my-1">
+							<label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+							<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="ageGroup">
+								<option selected>Choose...</option>
+								<option value="under30">Under 30</option>
+								<option value="under40">30-40</option>
+								<option value="under50">40-50</option>
+							</select>
+						</div>
+						<div class="col-auto my-1">
+							<button type="submit" value="submit" class="btn btn-dark">Submit</button>
+						</div>
+					</div>
+				</form>
 			</div>
 		</div>
 	</section>

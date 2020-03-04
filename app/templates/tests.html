@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head class="has-navbar-fixed-top">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- Bulma CSS -->
+    <!-- <link href="{{ url_for('static', filename='css/bulma.css')}}" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+
+    <!-- Theme CSS -->
+    <link href="{{ url_for('static', filename='css/freelancer.css')}}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/error.css')}}">
+
+    <!-- Custom fonts for this theme -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="57x57"
+        href="{{ url_for('static', filename = 'logos/favicons/apple-icon-57x57.png')}}">
+    <link rel="apple-touch-icon" sizes="60x60"
+        href="{{ url_for('static', filename = 'logos/favicons/apple-icon-60x60.png')}}">
+    <link rel="apple-touch-icon" sizes="60x60"
+        href="{{ url_for('static', filename = 'logos/favicon/apple-icon-72x72.png')}}">
+    <link rel="apple-touch-icon" sizes="60x60"
+        href="{{ url_for('static', filename = 'logos/favicons/apple-icon-76x76.png')}}">
+    <link rel="apple-touch-icon" sizes="60x60"
+        href="{{ url_for('static', filename = 'logos/favicons/apple-icon-114x114.png')}}">
+    <link rel="apple-touch-icon" sizes="60x60"
+        href="{{ url_for('static', filename = 'logos/favicons/apple-icon-120x120.png')}}">
+    <link rel="apple-touch-icon" sizes="60x60"
+        href="{{ url_for('static', filename = 'logos/favicons/apple-icon-144x144.png')}}">
+    <link rel="apple-touch-icon" sizes="60x60"
+        href="{{ url_for('static', filename = 'logos/favicons/apple-icon-152x152.png')}}">
+    <link rel="apple-touch-icon" sizes="60x60"
+        href="{{ url_for('static', filename = 'logos/favicons/apple-icon-180x180.png')}}">
+    <link rel="apple-touch-icon" sizes="60x60"
+        href="{{ url_for('static', filename = 'logos/favicons/apple-icon-192x192.png')}}">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="{{ url_for('static', filename = 'logos/favicons/favicon-32x32.png')}}">
+    <link rel="icon" type="image/png" sizes="96x96"
+        href="{{ url_for('static', filename = 'logos/favicons/favicon-96x96.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="{{ url_for('static', filename = 'logos/favicons/favicon-16x16.png')}}">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <title>{{ title }}</title>
+
+</head>
+
+<body>
+    <h1> Hello World!</h1>
+    <h3> You selected: {{ age }}</h3>
+</body>
+
+</html>

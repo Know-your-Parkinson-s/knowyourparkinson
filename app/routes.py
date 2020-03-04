@@ -5,12 +5,19 @@ import json
 
 
 @app.route("/")
-@app.route("/index")
+@app.route("/index/")
 def index():
     return render_template("index.html", title='Home')
 
 
-@app.route('/debug-sentry')
+@app.route("/tests/", methods=['GET', 'POST'])
+def tests():
+    age = request.form.get('ageGroup')
+    print(age)
+    return render_template('tests.html', age=age)
+
+
+@app.route('/debug-sentry/')
 def trigger_error():
     division_by_zero = 1 / 0
 
