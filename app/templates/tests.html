@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<!DOCTYPE html>
+<html lang="en">
+
+<head class="has-navbar-fixed-top">
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bulma CSS -->
-    <link href="{{ url_for('static', filename='css/mystyles.css')}}" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
-
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/combine/npm/bulma@0.8.0/css/bulma.min.css,npm/bulma-extensions@6.2.7/bulma-steps/dist/css/bulma-steps.min.css">
     <!-- Theme CSS -->
     <link href="{{ url_for('static', filename='css/freelancer.css')}}" rel="stylesheet">
 
@@ -58,27 +60,73 @@
 </head>
 
 <body class="has-navbar-fixed-top">
+
     <nav class="navbar is-dark is-fixed-top" role="navigation" aria-label="main navigation">
         <div class="container">
             <div class="steps is-small">
+                {% if tNo == '1' %}
                 <div class="step-item is-active is-success">
                     <div class="step-marker">
-                        <!-- <span class="icon">
-                            <i class="fa fa-check"></i>
-                        </span> -->
                     </div>
                     <div class="step-details">
                         <p class="step-title">Step 1</p>
                         <p>This is the first step of the process.</p>
                     </div>
                 </div>
-                <div class="step-item">
+                {% else %}
+                <div class="step-item is-complete is-success">
+                    <div class="step-marker">
+                        <span class="icon">
+                            <i class="fa fa-check"></i>
+                        </span>
+                    </div>
+                    <div class="step-details">
+                        <p class="step-title">Step 1</p>
+                        <p>This is the first step of the process.</p>
+                    </div>
+                </div>
+                {% endif %}
+
+                {% if tNo == '2' %}
+                <div class="step-item is-active is-success">
                     <div class="step-marker"></div>
                     <div class="step-details">
                         <p class="step-title">Step 2</p>
                         <p>This is the second step. You get here once you have completed the first step.</p>
                     </div>
                 </div>
+                {% elif tNo == '1' %}
+                <div class="step-item">
+                    <div class="step-marker">2</div>
+                    <div class="step-details">
+                        <p class="step-title">Step 2</p>
+                        <p>This is the second step. You get here once you have completed the first step.</p>
+                    </div>
+                </div>
+                {% else %}
+                <div class="step-item is-complete is-success">
+                    <div class="step-marker">
+                        <span class="icon">
+                            <i class="fa fa-check"></i>
+                        </span>
+                    </div>
+                    <div class="step-details">
+                        <p class="step-title">Step 2</p>
+                        <p>This is the second step. You get here once you have completed the first step.</p>
+                    </div>
+                </div>
+                {% endif %}
+
+
+                {% if tNo == '3' %}
+                <div class="step-item is-active is-success">
+                    <div class="step-marker">3</div>
+                    <div class="step-details">
+                        <p class="step-title">Step 3</p>
+                        <p>This is the third step. One more step before the end.</p>
+                    </div>
+                </div>
+                {% elif tNo == '1' or tNo == '2' %}
                 <div class="step-item">
                     <div class="step-marker">3</div>
                     <div class="step-details">
@@ -86,6 +134,33 @@
                         <p>This is the third step. One more step before the end.</p>
                     </div>
                 </div>
+                {% else %}
+                <div class="step-item is-success is-complete is-success">
+                    <div class="step-marker">
+                        <span class="icon">
+                            <i class="fa fa-check"></i>
+                        </span>
+                    </div>
+                    <div class="step-details">
+                        <p class="step-title">Step 3</p>
+                        <p>This is the third step. One more step before the end.</p>
+                    </div>
+                </div>
+                {% endif %}
+
+                {% if tNo == '4' %}
+                <div class="step-item is-active is-success">
+                    <div class="step-marker">
+                        <span class="icon">
+                            <i class="fa fa-flag"></i>
+                        </span>
+                    </div>
+                    <div class="step-details">
+                        <p class="step-title">Step 4</p>
+                        <p>Final step. You have completed all the previous steps and end the process.</p>
+                    </div>
+                </div>
+                {% else %}
                 <div class="step-item">
                     <div class="step-marker">
                         <span class="icon">
@@ -97,10 +172,35 @@
                         <p>Final step. You have completed all the previous steps and end the process.</p>
                     </div>
                 </div>
+                {% endif %}
+
+
             </div>
         </div>
-
     </nav>
+
+    <!-- Slide 2 -->
+    <section class="hero is-success is-fullheight-with-navbar" id="started">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="Slide 2">
+                    Do your test
+                </h1>
+                <h2 class="subtitle">
+                    <button type="submit" value="submit" class="btn btn-dark disabled">Click</button> to submit
+                    result
+                </h2>
+                <form method="POST">
+                    <div class="form-row align-items-center">
+                        <div class="col-auto my-1">
+                            <button type="submit" value="submit" class="btn btn-dark">Next</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </section>
 
 
     <!-- Scripts -->

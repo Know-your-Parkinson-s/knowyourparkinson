@@ -7,8 +7,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<!-- Bulma CSS -->
-	<link href="{{ url_for('static', filename='css/mystyles.css')}}" rel="stylesheet">
-
+	<link rel="stylesheet"
+		href="https://cdn.jsdelivr.net/combine/npm/bulma@0.8.0/css/bulma.min.css,npm/bulma-extensions@6.2.7/bulma-steps/dist/css/bulma-steps.min.css">
 	<!-- Theme CSS -->
 	<link href="{{ url_for('static', filename='css/freelancer.css')}}" rel="stylesheet">
 
@@ -125,7 +125,7 @@
 				<h2 class="subtitle">
 					Select your Age Group
 				</h2>
-				<form method="POST" action=" {{ url_for('tests') }}">
+				<form method="POST">
 					<div class="form-row align-items-center">
 						<div class="col-auto my-1">
 							<label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
