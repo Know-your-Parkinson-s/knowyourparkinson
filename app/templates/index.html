@@ -11,8 +11,8 @@
 		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
 	<!-- Bulma CSS -->
-	<!-- <link href="{{ url_for('static', filename='css/bulma.css')}}" rel="stylesheet"> -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+	<link href="{{ url_for('static', filename='css/mystyles.css')}}" rel="stylesheet">
+	<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"> -->
 
 	<!-- Theme CSS -->
 	<link href="{{ url_for('static', filename='css/freelancer.css')}}" rel="stylesheet">
@@ -130,13 +130,9 @@
 	</nav> -->
 
 	<!-- Slide 1 -->
-	<section class="hero is-danger is-fullheight-with-navbar" id="about">
+	<section class="hero is-primary is-fullheight-with-navbar" id="about">
 
 		<div class="columns is-gapless">
-			<div class="column">
-				<img src="{{ url_for('static', filename = 'logos/cover.png')}}" class="img-fluid"
-					alt="Responsive image">
-			</div>
 			<div class="column">
 				<img src="{{ url_for('static', filename = 'logos/cover.png')}}" class="img-fluid"
 					alt="Responsive image">
@@ -220,8 +216,20 @@
 	<!-- Copyright Section -->
 	<section class="copyright py-4 text-center text-white">
 		<div class="container">
-			<small>Made with &nbsp;<i class="fas fa-heartbeat"></i>&nbsp; by <a
-					href="https://github.com/orgs/Know-your-Parkinson-s/people">Team 3</a> </small>
+			<div class="row">
+
+				<div class="col-lg-6 mb-5 mb-lg-0">
+					<a href="https://bulma.io">
+						<img src="https://bulma.io/images/made-with-bulma--dark.png" alt="Made with Bulma" width="128"
+							height="24">
+					</a>
+				</div>
+				<div class="col-lg-6">
+					<small>Made with &nbsp;<i class="fas fa-heartbeat"></i>&nbsp; by <a
+							href="https://github.com/orgs/Know-your-Parkinson-s/people">Team 3</a> </small>
+				</div>
+
+			</div>
 		</div>
 	</section>
 
