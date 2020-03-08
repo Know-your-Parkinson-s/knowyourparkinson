@@ -1,145 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
     <!-- Bulma CSS -->
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/combine/npm/bulma@0.8.0/css/bulma.min.css,npm/bulma-extensions@6.2.7/bulma-steps/dist/css/bulma-steps.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/combine/npm/bulma@0.8.0/css/bulma.min.css,npm/bulma-extensions@6.2.7/bulma-steps/dist/css/bulma-steps.min.css"
+    />
     <!-- Theme CSS -->
-    <link href="{{ url_for('static', filename='css/freelancer.css')}}" rel="stylesheet">
+    <link
+      href="{{ url_for('static', filename='css/freelancer.css')}}"
+      rel="stylesheet"
+    />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/error.css')}}">
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename = 'css/error.css')}}"
+    />
 
     <!-- Custom fonts for this theme -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
-        type="text/css">
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic"
+      rel="stylesheet"
+      type="text/css"
+    />
 
     <!-- Favicons -->
-    <link rel="apple-touch-icon" sizes="57x57"
-        href="{{ url_for('static', filename = 'logos/favicons/apple-icon-57x57.png')}}">
-    <link rel="apple-touch-icon" sizes="60x60"
-        href="{{ url_for('static', filename = 'logos/favicons/apple-icon-60x60.png')}}">
-    <link rel="apple-touch-icon" sizes="60x60"
-        href="{{ url_for('static', filename = 'logos/favicon/apple-icon-72x72.png')}}">
-    <link rel="apple-touch-icon" sizes="60x60"
-        href="{{ url_for('static', filename = 'logos/favicons/apple-icon-76x76.png')}}">
-    <link rel="apple-touch-icon" sizes="60x60"
-        href="{{ url_for('static', filename = 'logos/favicons/apple-icon-114x114.png')}}">
-    <link rel="apple-touch-icon" sizes="60x60"
-        href="{{ url_for('static', filename = 'logos/favicons/apple-icon-120x120.png')}}">
-    <link rel="apple-touch-icon" sizes="60x60"
-        href="{{ url_for('static', filename = 'logos/favicons/apple-icon-144x144.png')}}">
-    <link rel="apple-touch-icon" sizes="60x60"
-        href="{{ url_for('static', filename = 'logos/favicons/apple-icon-152x152.png')}}">
-    <link rel="apple-touch-icon" sizes="60x60"
-        href="{{ url_for('static', filename = 'logos/favicons/apple-icon-180x180.png')}}">
-    <link rel="apple-touch-icon" sizes="60x60"
-        href="{{ url_for('static', filename = 'logos/favicons/apple-icon-192x192.png')}}">
-    <link rel="icon" type="image/png" sizes="32x32"
-        href="{{ url_for('static', filename = 'logos/favicons/favicon-32x32.png')}}">
-    <link rel="icon" type="image/png" sizes="96x96"
-        href="{{ url_for('static', filename = 'logos/favicons/favicon-96x96.png')}}">
-    <link rel="icon" type="image/png" sizes="16x16"
-        href="{{ url_for('static', filename = 'logos/favicons/favicon-16x16.png')}}">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="{{ url_for('static', filename = 'logos/favicons/apple-icon-57x57.png')}}"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="{{ url_for('static', filename = 'logos/favicons/apple-icon-60x60.png')}}"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="{{ url_for('static', filename = 'logos/favicon/apple-icon-72x72.png')}}"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="{{ url_for('static', filename = 'logos/favicons/apple-icon-76x76.png')}}"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="{{ url_for('static', filename = 'logos/favicons/apple-icon-114x114.png')}}"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="{{ url_for('static', filename = 'logos/favicons/apple-icon-120x120.png')}}"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="{{ url_for('static', filename = 'logos/favicons/apple-icon-144x144.png')}}"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="{{ url_for('static', filename = 'logos/favicons/apple-icon-152x152.png')}}"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="{{ url_for('static', filename = 'logos/favicons/apple-icon-180x180.png')}}"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="{{ url_for('static', filename = 'logos/favicons/apple-icon-192x192.png')}}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="{{ url_for('static', filename = 'logos/favicons/favicon-32x32.png')}}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="{{ url_for('static', filename = 'logos/favicons/favicon-96x96.png')}}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="{{ url_for('static', filename = 'logos/favicons/favicon-16x16.png')}}"
+    />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
 
     <title>{{ title }}</title>
+  </head>
 
-</head>
-
-<body class="has-navbar-fixed-top">
-
+  <body class="has-navbar-fixed-top" id="page-top">
     <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
-            <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="#page-top">Know Your Park</a>
-                <button
-                    class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded"
-                    type="button" data-toggle="collapse" data-target="#navbarResponsive"
-                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="fas fa-bars"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item mx-0 mx-lg-1">
-                            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#score">Score</a>
-                        </li>
-                        <li class="nav-item mx-0 mx-lg-1">
-                            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#chart">Chart</a>
-                        </li>
-                        <li class="nav-item mx-0 mx-lg-1">
-                            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#send">Send</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+      <nav
+        class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top"
+        id="mainNav"
+      >
+        <div class="container">
+          <a class="navbar-brand js-scroll-trigger" href="#page-top"
+            >Know Your Park</a
+          >
+          <button
+            class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarResponsive"
+            aria-controls="navbarResponsive"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            Menu
+            <i class="fas fa-bars"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item mx-0 mx-lg-1">
+                <a
+                  class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                  href="#score"
+                  >Score</a
+                >
+              </li>
+              <li class="nav-item mx-0 mx-lg-1">
+                <a
+                  class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                  href="#chart"
+                  >Chart</a
+                >
+              </li>
+              <li class="nav-item mx-0 mx-lg-1">
+                <a
+                  class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                  href="#send"
+                  >Send</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </div>
 
     <section class="hero is-info is-fullheight-with-navbar" id="score">
-        <div class="hero-body">
-            <div class="container">
-                <h1 class="Slide 2">
-                    Score
-                </h1>
-                <h2 class="subtitle">
-                    Some Other Text
-                </h2>
-            </div>
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="Slide 2">
+            Score
+          </h1>
+          <h2 class="subtitle">
+            Some Other Text
+          </h2>
         </div>
+      </div>
     </section>
 
     <section class="hero is-info is-fullheight-with-navbar" id="chart">
-        <div class="hero-body">
-            <div class="container">
-                <h1 class="Slide 2">
-                    Chart
-                </h1>
-                <h2 class="subtitle">
-                    Some Other Text
-                </h2>
-            </div>
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="Slide 2">
+            Chart
+          </h1>
+          <h2 class="subtitle">
+            Some Other Text
+          </h2>
         </div>
+      </div>
     </section>
 
     <section class="hero is-info is-fullheight-with-navbar" id="send">
-        <div class="hero-body">
-            <div class="container">
-                <h1 class="Slide 2">
-                    Send
-                </h1>
-                <h2 class="subtitle">
-                    Some Other Text
-                </h2>
-            </div>
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="Slide 2">
+            Send
+          </h1>
+          <h2 class="subtitle">
+            Some Other Text
+          </h2>
         </div>
+      </div>
     </section>
-
 
     <!-- Scripts -->
 
     <!-- Fontawesome -->
-    <script src="https://kit.fontawesome.com/b5c8bf5f8c.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/b5c8bf5f8c.js"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- Custom scripts for this template -->
     <script src="{{ url_for('static', filename='javascript/freelancer.js')}}"></script>
@@ -147,9 +239,7 @@
     <!-- Bulma Steps -->
     <script src="{{ url_for('static', filename='javascript/bulma-steps.min.js')}}"></script>
 
-
     <!-- Plugin JavaScript -->
     <script src="{{ url_for('static', filename='vendor/jquery.easing.js')}}"></script>
-</body>
-
+  </body>
 </html>
