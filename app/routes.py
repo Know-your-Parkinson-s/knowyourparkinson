@@ -34,9 +34,9 @@ def results():
     return render_template('results.html')
 
 
-@app.route('/debug-sentry/')
-def trigger_error():
-    division_by_zero = 1 / 0
+@app.route("/reaction/")
+def reaction():
+    return render_template('reaction.html')
 
 
 if __name__ == '__main__':
