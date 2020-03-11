@@ -2,6 +2,7 @@ from app import app
 from flask import render_template, request, redirect, url_for, session
 import requests
 import json
+from device_detector import SoftwareDetector
 
 
 @app.route("/", methods=['GET', 'POST'])
@@ -36,7 +37,9 @@ def results():
 
 @app.route("/reaction/")
 def reaction():
-    return render_template('reaction.html')
+    ua = request.headers.get('User-Agent')
+    device = SoftwareDetector(ua).parse()
+    return render_template('reaction.html', ua=device.os_name())
 
 
 if __name__ == '__main__':
