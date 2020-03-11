@@ -1,8 +1,14 @@
-from app import app
-from flask import render_template, request, redirect, url_for, session
-import requests
 import json
+
+import requests
 from device_detector import SoftwareDetector
+from flask import redirect
+from flask import render_template
+from flask import request
+from flask import session
+from flask import url_for
+
+from app import app
 
 
 @app.route("/", methods=["GET", "POST"])
