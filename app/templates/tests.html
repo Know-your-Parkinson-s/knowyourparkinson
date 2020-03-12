@@ -252,11 +252,11 @@
         class="hero is-success is-fullheight-with-navbar"
         id="reactionContainer"
       >
-        {% if tNo == '1' %}
         <div class="hero-body">
           <div class="container">
             <h2 class="subtitle">
               <div class="container">
+                {% if tNo == '1' %}
                 <h1>Test your reaction time!</h1>
                 <p>UA: {{ ua }}</p>
                 <p>
@@ -272,6 +272,7 @@
                   style="border-radius: 0%, background-color= #aeab4e
                     "
                 ></div> -->
+                {% endif %}
               </div>
             </h2>
             <button type="submit" value="submit" class="btn btn-dark disabled">
@@ -279,7 +280,6 @@
             </button>
           </div>
         </div>
-        {% endif %}
 
         <div class="hero-foot">
           <div class="container">

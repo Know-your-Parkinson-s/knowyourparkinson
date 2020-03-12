@@ -17,6 +17,8 @@ def index():
 
 @app.route("/tests/<tNo>", methods=['GET', 'POST'])
 def tests(tNo):
+    ua = request.headers.get('User-Agent')
+    device = SoftwareDetector(ua).parse()
     if request.method == 'POST':
         testNo = session.get('testNo', None)
         testNo += 1
@@ -27,7 +29,7 @@ def tests(tNo):
             return redirect(url_for('results'))
     age = request.form.get('ageGroup')
     print(age)
-    return render_template('tests.html', age=age, tNo=tNo)
+    return render_template('tests.html', age=age, tNo=tNo, ua=device.os_name())
 
 
 @app.route("/results/")
