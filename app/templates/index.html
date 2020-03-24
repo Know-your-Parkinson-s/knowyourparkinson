@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="has-navbar-fixed-top">
+<html lang="en">
   <head class="has-navbar-fixed-top">
     <!-- Required meta tags -->
     <meta charset="utf-8" />
@@ -13,6 +13,11 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/combine/npm/bulma@0.8.0/css/bulma.min.css,npm/bulma-extensions@6.2.7/bulma-steps/dist/css/bulma-steps.min.css"
     />
+    <!-- Theme CSS -->
+    <link
+      href="{{ url_for('static', filename='css/freelancer.css')}}"
+      rel="stylesheet"
+    />
 
     <!-- Custom CSS -->
     <link
@@ -20,10 +25,21 @@
       type="text/css"
       href="{{ url_for('static', filename = 'css/error.css')}}"
     />
+
+    <!-- Custom fonts for this theme -->
     <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
       rel="stylesheet"
       type="text/css"
-      href="{{ url_for('static', filename = 'css/mystyles.css')}}"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic"
+      rel="stylesheet"
+      type="text/css"
     />
 
     <!-- Favicons -->
@@ -105,49 +121,55 @@
   <body id="page-top">
     <!-- Navigation -->
 
-    <nav
-      class="navbar is-transparent is-fixed-top"
-      role="navigation"
-      aria-label="main navigation"
-    >
-      <div class="navbar-brand">
-        <a class="navbar-item js-scroll-trigger" href="#page-top">
-          <h3>Know Your Park</h3>
-        </a>
-
-        <a
-          role="button"
-          class="navbar-burger burger"
-          aria-label="menu"
-          aria-expanded="false"
-          data-target="navbarBasicExample"
-        >
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
-
-      <div id="mainNav" class="navbar-menu">
-        <div class="navbar-start"></div>
-
-        <div class="navbar-end">
-          <div class="navbar-item">
-            <div class="buttons">
-              <a class="button is-light js-scroll-trigger" href="#about">
-                <strong>About</strong>
-              </a>
-              <a class="button is-light js-scroll-trigger" href="#what">
-                <strong>What We Do</strong>
-              </a>
-              <a class="button is-primary js-scroll-trigger" href="#started">
-                <strong>Get Started</strong>
-              </a>
-            </div>
+    <div class="container-fluid">
+      <nav
+        class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top"
+        id="mainNav"
+      >
+        <div class="container">
+          <a class="navbar-brand js-scroll-trigger" href="#page-top"
+            >Know Your Park</a
+          >
+          <button
+            class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarResponsive"
+            aria-controls="navbarResponsive"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            Menu
+            <i class="fas fa-bars"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item mx-0 mx-lg-1">
+                <a
+                  class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                  href="#about"
+                  >About</a
+                >
+              </li>
+              <li class="nav-item mx-0 mx-lg-1">
+                <a
+                  class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                  href="#what"
+                  >What we do</a
+                >
+              </li>
+              <li class="nav-item mx-0 mx-lg-1">
+                <a
+                  class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                  href="#started"
+                  >Get Started</a
+                >
+              </li>
+            </ul>
           </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </div>
 
     <!-- Slide 1 -->
     <section
@@ -226,54 +248,54 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-      <div class="content has-text-centered">
-        <div class="container">
-          <div class="columns">
-            <!-- Footer Social Icons -->
-            <div class="column">
-              <h4 class="text-uppercase mb-4">Check out the code!</h4>
-              <a class="btn btn-outline-light btn-social mx-1" href="#">
-                <i class="fab fa-github"></i>
-              </a>
-            </div>
-
-            <!-- Footer About Text -->
-            <div class="column">
-              <h4 class="text-uppercase mb-4">About Know Your Park</h4>
-              <p class="lead mb-0">
-                KYP is a free, MIT licensed web application created at
-                <a href="https://ufl.edu">UF </a> by students.
-              </p>
-            </div>
+    <footer class="footer text-center">
+      <div class="container">
+        <div class="row">
+          <!-- Footer Social Icons -->
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <h4 class="text-uppercase mb-4">Check out the code!</h4>
+            <a class="btn btn-outline-light btn-social mx-1" href="#">
+              <i class="fab fa-github"></i>
+            </a>
           </div>
-        </div>
 
-        <!-- Copyright Section -->
-        <div class="container is-info">
-          <div class="columns">
-            <div class="column">
-              <a href="https://bulma.io">
-                <img
-                  src="https://bulma.io/images/made-with-bulma--dark.png"
-                  alt="Made with Bulma"
-                  width="128"
-                  height="24"
-                />
-              </a>
-            </div>
-            <div class="column">
-              <small
-                >Made with &nbsp;<i class="fas fa-heartbeat"></i>&nbsp; by
-                <a href="https://github.com/orgs/Know-your-Parkinson-s/people"
-                  >Team 3</a
-                >
-              </small>
-            </div>
+          <!-- Footer About Text -->
+          <div class="col-lg-6">
+            <h4 class="text-uppercase mb-4">About Know Your Park</h4>
+            <p class="lead mb-0">
+              KYP is a free, MIT licensed web application created at
+              <a href="https://ufl.edu">UF </a> by students.
+            </p>
           </div>
         </div>
       </div>
     </footer>
+
+    <!-- Copyright Section -->
+    <section class="copyright py-4 text-center text-white">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <a href="https://bulma.io">
+              <img
+                src="https://bulma.io/images/made-with-bulma--dark.png"
+                alt="Made with Bulma"
+                width="128"
+                height="24"
+              />
+            </a>
+          </div>
+          <div class="col-lg-6">
+            <small
+              >Made with &nbsp;<i class="fas fa-heartbeat"></i>&nbsp; by
+              <a href="https://github.com/orgs/Know-your-Parkinson-s/people"
+                >Team 3</a
+              >
+            </small>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
     <div class="scroll-to-top d-lg-none position-fixed ">
@@ -302,6 +324,11 @@
     <script
       src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
       integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
       crossorigin="anonymous"
     ></script>
 
