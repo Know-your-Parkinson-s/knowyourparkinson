@@ -8,11 +8,6 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
 
-    <!-- Bulma CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/combine/npm/bulma@0.8.0/css/bulma.min.css,npm/bulma-extensions@6.2.7/bulma-steps/dist/css/bulma-steps.min.css"
-    />
     <!-- Theme CSS -->
     <link
       href="{{ url_for('static', filename='css/freelancer.css')}}"
@@ -188,62 +183,79 @@
       </div>
     </section>
 
-    <!-- Slide 2 -->
-    <section class="hero is-info is-fullheight-with-navbar" id="what">
-      <div class="hero-body">
+    <section class="page-section portfolio text-white bg-primary" id="what">
+      <div class="container">
+        <!-- Portfolio Section Heading -->
+        <h2 class="page-section-heading text-center text-uppercase mb-0">
+          What We Do
+        </h2>
+
+        <!-- Icon Divider -->
+        <div class="divider-custom divider-light">
+          <div class="divider-custom-line"></div>
+          <div class="divider-custom-icon">
+            <i class="fas fa-star"></i>
+          </div>
+          <div class="divider-custom-line"></div>
+        </div>
         <div class="container">
-          <h1 class="Slide 2">
-            What We Do
-          </h1>
-          <h2 class="subtitle">
-            We provide tests that help you predict if you have Parkinson's. The
-            following are available for you to try it out.
-            <ul style="list-style-type:circle;">
-              <li>Reaction Test</li>
-              <li>Circle Test</li>
-              <li>Questionnaire</li>
-            </ul>
-            A result will be provided at the end of the tests.
-          </h2>
+          <h3 class="subtitle">
+            We provide tests that help you check if you have the telltale
+            symptoms of Parkinson's. The following are available for you to try!
+          </h3>
+          <h5>
+            <li>Reaction Test</li>
+            <li>Circle Test</li>
+            <li>Questionnaire</li>
+          </h5>
         </div>
       </div>
     </section>
 
-    <!-- Slide 3 -->
-    <section class="hero is-success is-fullheight-with-navbar" id="started">
-      <div class="hero-body">
-        <div class="container">
-          <h1 class="Slide 2">
-            To get started,
-          </h1>
-          <h2 class="subtitle">
-            Select your age group
-          </h2>
-          <form method="POST">
-            <div class="form-row align-items-center">
-              <div class="col-auto my-1">
-                <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect"
-                  >Preference</label
-                >
-                <select
-                  class="custom-select mr-sm-2"
-                  id="inlineFormCustomSelect"
-                  name="ageGroup"
-                >
-                  <option selected>Choose...</option>
-                  <option value="under30">Under 30</option>
-                  <option value="under40">30-40</option>
-                  <option value="under50">40-50</option>
-                </select>
-              </div>
-              <div class="col-auto my-1">
-                <button type="submit" value="submit" class="btn btn-dark">
-                  Submit
-                </button>
-              </div>
-            </div>
-          </form>
+    <!-- About Section -->
+    <section class="page-section bg-primary text-white mb-0" id="started">
+      <div class="container">
+        <!-- About Section Heading -->
+        <h2 class="page-section-heading text-center text-uppercase text-white">
+          Get Started
+        </h2>
+
+        <!-- Icon Divider -->
+        <div class="divider-custom divider-light">
+          <div class="divider-custom-line"></div>
+          <div class="divider-custom-icon">
+            <i class="fas fa-star"></i>
+          </div>
+          <div class="divider-custom-line"></div>
         </div>
+
+        <h2 class="subtitle">
+          Select your age group
+        </h2>
+        <form method="POST">
+          <div class="form-row align-items-center">
+            <div class="col-auto my-1">
+              <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect"
+                >Preference</label
+              >
+              <select
+                class="custom-select mr-sm-2"
+                id="inlineFormCustomSelect"
+                name="ageGroup"
+              >
+                <option selected>Choose...</option>
+                <option value="under30">Under 30</option>
+                <option value="under40">30-40</option>
+                <option value="under50">40-50</option>
+              </select>
+            </div>
+            <div class="col-auto my-1">
+              <button type="submit" value="submit" class="btn btn-dark">
+                Submit
+              </button>
+            </div>
+          </div>
+        </form>
       </div>
     </section>
 
