@@ -10,7 +10,7 @@
 
     <!-- Theme CSS -->
     <link
-      href="{{ url_for('static', filename='css/freelancer.css')}}"
+      href="{{ url_for('static', filename='css/mystyles.css')}}"
       rel="stylesheet"
     />
 
@@ -167,11 +167,7 @@
     </div>
 
     <!-- Slide 1 -->
-    <section
-      class="hero is-fullheight"
-      style="background-color: #d85a3b;"
-      id="about"
-    >
+    <section class="masthead" style="background-color: #d85a3b;" id="about">
       <div class="columns is-gapless">
         <div class="column">
           <img
@@ -183,7 +179,11 @@
       </div>
     </section>
 
-    <section class="page-section portfolio text-white bg-primary" id="what">
+    <!-- Slide 2 -->
+    <section
+      class="page-section portfolio text-white bg-primary masthead"
+      id="what"
+    >
       <div class="container">
         <!-- Portfolio Section Heading -->
         <h2 class="page-section-heading text-center text-uppercase mb-0">
@@ -203,6 +203,7 @@
             We provide tests that help you check if you have the telltale
             symptoms of Parkinson's. The following are available for you to try!
           </h3>
+          <br />
           <h5>
             <li>Reaction Test</li>
             <li>Circle Test</li>
@@ -212,15 +213,16 @@
       </div>
     </section>
 
-    <!-- About Section -->
-    <section class="page-section bg-primary text-white mb-0" id="started">
+    <!-- Slide 3 -->
+    <section
+      class="page-section bg-secondary text-white mb-0 masthead"
+      id="started"
+    >
       <div class="container">
-        <!-- About Section Heading -->
         <h2 class="page-section-heading text-center text-uppercase text-white">
           Get Started
         </h2>
 
-        <!-- Icon Divider -->
         <div class="divider-custom divider-light">
           <div class="divider-custom-line"></div>
           <div class="divider-custom-icon">
@@ -229,11 +231,12 @@
           <div class="divider-custom-line"></div>
         </div>
 
-        <h2 class="subtitle">
+        <h2 class="subtitle text-center">
           Select your age group
         </h2>
+        <br />
         <form method="POST">
-          <div class="form-row align-items-center">
+          <div class="form-row">
             <div class="col-auto my-1">
               <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect"
                 >Preference</label
