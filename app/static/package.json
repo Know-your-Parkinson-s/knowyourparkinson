@@ -13,5 +13,8 @@
   "devDependencies": {
     "bootstrap": "^4.4.1",
     "node-sass": "^4.13.1"
+  },
+  "dependencies": {
+    "bootstrap-select": "^1.13.12"
   }
 }

@@ -14,13 +14,6 @@
       rel="stylesheet"
     />
 
-    <!-- Custom CSS -->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{{ url_for('static', filename = 'css/error.css')}}"
-    />
-
     <!-- Custom fonts for this theme -->
     <link
       href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
@@ -235,30 +228,25 @@
           Select your age group
         </h2>
         <br />
-        <form method="POST">
-          <div class="form-row">
-            <div class="col-auto my-1">
-              <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect"
-                >Preference</label
-              >
-              <select
-                class="custom-select mr-sm-2"
-                id="inlineFormCustomSelect"
-                name="ageGroup"
-              >
-                <option selected>Choose...</option>
-                <option value="under30">Under 30</option>
-                <option value="under40">30-40</option>
-                <option value="under50">40-50</option>
-              </select>
+        <div class="container">
+          <form method="POST">
+            <div class="form-row">
+              <div class="col-auto my-1">
+                <select class="custom-select" name="ageGroup">
+                  <option disabled selected>Choose...</option>
+                  <option value="under30">Under 30</option>
+                  <option value="under40">30-40</option>
+                  <option value="under50">40-50</option>
+                </select>
+              </div>
+              <div class="col-auto my-1 mx-4">
+                <button type="submit" value="submit" class="btn btn-dark">
+                  Submit
+                </button>
+              </div>
             </div>
-            <div class="col-auto my-1">
-              <button type="submit" value="submit" class="btn btn-dark">
-                Submit
-              </button>
-            </div>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </section>
 
@@ -269,7 +257,10 @@
           <!-- Footer Social Icons -->
           <div class="col-lg-6 mb-5 mb-lg-0">
             <h4 class="text-uppercase mb-4">Check out the code!</h4>
-            <a class="btn btn-outline-light btn-social mx-1" href="#">
+            <a
+              class="btn btn-outline-light btn-social mx-1"
+              href="https://github.com/Know-your-Parkinson-s/knowyourparkinson"
+            >
               <i class="fab fa-github"></i>
             </a>
           </div>
