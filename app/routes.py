@@ -26,8 +26,7 @@ def reaction():
     ua = request.headers.get('User-Agent')
     device = SoftwareDetector(ua).parse()
     age = session['age']
-    val = session['val']
-    return render_template('reaction.html', age=val, ua=device.os_name())
+    return render_template('reaction.html', age=age, ua=device.os_name())
 
 
 @app.route("/results/")
