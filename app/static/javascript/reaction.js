@@ -27,6 +27,8 @@ var clickedTime;
 var createdTime;
 var reactionTime;
 var testno = 0;
+var container = document.getElementById("reactionContainer");
+var vals = [];
 
 function changeColor() {
   var time = Math.random();
@@ -34,15 +36,16 @@ function changeColor() {
   testno = testno + 1;
 
   setTimeout(function() {
-    document.getElementById("reactionContainer").classList.remove("is-success");
-    document.getElementById("reactionContainer").classList.add("is-danger");
+    container.classList.remove("is-success");
+    container.classList.add("is-danger");
     createdTime = Date.now();
   }, time);
 }
 
-document.getElementById("reactionContainer").onclick = function() {
+container.onclick = function() {
   clickedTime = Date.now();
   reactionTime = (clickedTime - createdTime) / 1000;
+  vals.push(reactionTime);
 
   document.getElementById("printReactionTime").innerHTML =
     "Your Reaction Time is: " + reactionTime + "seconds";
@@ -54,9 +57,8 @@ document.getElementById("reactionContainer").onclick = function() {
   if (testno < 3) {
     changeColor();
   } else {
-    setTimeout(function() {
-      document.getElementById("nextTest").click();
-    }, 3000);
+    console.log(testno);
+    console.log(vals);
   }
 };
 

@@ -4,14 +4,18 @@
   "description": "",
   "main": "sass/freelancer.scss",
   "scripts": {
-    "css-build": "node-sass --omit-source-map-url sass/freelancer.scss css/mystyles.css",
-    "css-watch": "npm run css-build -- --watch",
-    "start": "npm run css-watch"
+    "css-build-bootstrap": "node-sass --omit-source-map-url sass/mybootstrap.scss css/mybootstrap.css",
+    "css-watch-bootstrap": "npm run css-build-bootstrap -- --watch",
+    "test": "npm run css-watch-bootstrap",
+    "css-build-bulma": "node-sass --omit-source-map-url sass/mybulma.scss css/mybulma.css",
+    "css-watch-bulma": "npm run css-build-bulma -- --watch",
+    "start": "npm run css-watch-bulma"
   },
   "author": "InfernapeXavier",
   "license": "MIT",
   "devDependencies": {
     "bootstrap": "^4.4.1",
+    "bulma": "^0.8.1",
     "node-sass": "^4.13.1"
   },
   "dependencies": {
