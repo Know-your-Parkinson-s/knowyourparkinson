@@ -130,3 +130,6 @@ dmypy.json
 
 # VSCode Files
 .vscode/
+
+# Node
+app/static/node_modules

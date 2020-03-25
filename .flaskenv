@@ -1,0 +1,2 @@
+FLASK_APP=park.py
+FLASK_DEBUG=TRUE
