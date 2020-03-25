@@ -17,10 +17,17 @@ def index():
 
 @app.route("/reaction/", methods=['GET', 'POST'])
 def reaction():
+    if request.method == 'POST':
+        val = request.get_json()
+        session['val'] = val
+        print(val)
+        return redirect(url_for('reaction'))
+
     ua = request.headers.get('User-Agent')
     device = SoftwareDetector(ua).parse()
     age = session['age']
-    return render_template('reaction.html', age=age, ua=device.os_name())
+    val = session['val']
+    return render_template('reaction.html', age=val, ua=device.os_name())
 
 
 @app.route("/results/")

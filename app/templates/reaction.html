@@ -145,7 +145,11 @@
                     <div class="container" id="tapTarget">
                       <div class="card">
                         <div class="card-content">
-                          <h1>Test your reaction time!</h1>
+                          <h3 class="subtitle">
+                            Tap on this box whenever you're ready, and then tap
+                            everytime the background color changes
+                          </h3>
+
                           <p>UA: {{ ua }}</p>
                           <p>Age: {{ age }}</p>
 
@@ -155,10 +159,11 @@
                       </div>
                     </div>
                     <div class="container" style="padding: 30%;">
-                      <form action="POST">
+                      <form>
                         <button
-                          type="submit"
+                          type="button"
                           value="submit"
+                          id="submitButton"
                           class="button is-dark"
                         >
                           Submit
