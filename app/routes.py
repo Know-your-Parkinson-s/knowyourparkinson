@@ -54,5 +54,10 @@ def results():
     return render_template('results.html', title='Results')
 
 
+@app.route("/test/")
+def test():
+    return render_template('test.html')
+
+
 if __name__ == '__main__':
     app.run()
