@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Responsive Sketchpad</title>
+    <title>Tremor</title>
     <meta name="description" content="" />
     <meta name="author" content="" />
 
@@ -23,10 +23,12 @@
       #sketchpad {
         border: 1px solid #eee;
         cursor: crosshair;
+        background-image: url(https://source.unsplash.com/IMgXq0p_1yo);
+        background-size: contain;
       }
 
       section {
-        padding: 2rem 0;
+        padding: 2rem 1rem;
       }
 
       .text-center {
@@ -38,57 +40,38 @@
           margin-top: 8rem;
         }
       }
-
-      input {
-        font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial,
-          sans-serif;
-      }
     </style>
   </head>
   <body>
     <div class="container">
       <section class="text-center">
-        <h2>Responsive Sketchpad</h2>
+        <h2>Tremor Test</h2>
         <h5>
-          A completely responsive, HTML5 canvas sketchpad for use on desktop and
-          mobile browsers
+          Trace the Spiral below as best as you can in a single go
         </h5>
       </section>
       <section>
         <div class="row">
           <div class="two-thirds column">
             <div id="sketchpad"></div>
-            <em>Try resizing the window!</em>
-          </div>
-          <div class="one-third column">
-            <label for="line-color-input">Set Line Color</label>
-            <input
-              class="u-full-width"
-              type="text"
-              value="#000000"
-              id="line-color-input"
-            />
-            <label for="line-size-input">Set Line Size</label>
-            <input
-              class="u-full-width"
-              type="number"
-              value="5"
-              id="line-size-input"
-            />
-            <div class="row">
-              <div class="one-half column">
-                <button class="u-full-width" id="undo">Undo</button>
-              </div>
-              <div class="one-half column">
-                <button class="u-full-width" id="redo">Redo</button>
-              </div>
-              <button class="u-full-width" id="clear">Clear</button>
-            </div>
           </div>
         </div>
       </section>
       <section>
-        <h3>Basic Usage</h3>
+        <div class="row">
+          <div class="one-half column">
+            <button class="u-full-width" id="undo">Undo</button>
+          </div>
+          <div class="one-half column">
+            <button class="u-full-width" id="redo">Redo</button>
+          </div>
+          <button class="u-full-width" id="clear">Clear</button>
+        </div>
+      </section>
+      <section>
+        <button>
+          Next
+        </button>
       </section>
     </div>
 

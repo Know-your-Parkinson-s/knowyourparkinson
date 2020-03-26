@@ -2,13 +2,10 @@ var el = document.getElementById("sketchpad");
 var pad = new Sketchpad(el);
 
 // setLineColor
-function setLineColor(e) {
-  var color = e.target.value;
-  if (!color.startsWith("#")) {
-    color = "#" + color;
-  }
-  pad.setLineColor(color);
+function setLineColor() {
+  pad.setLineColor("#FFFFFF");
 }
+setLineColor();
 
 // setLineSize
 function setLineSize(e) {

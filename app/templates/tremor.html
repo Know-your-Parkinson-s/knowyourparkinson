@@ -2,7 +2,7 @@
 <html lang="en">
   <!DOCTYPE html>
   <html lang="en">
-    <head class="has-navbar-fixed-top">
+    <head>
       <!-- Required meta tags -->
       <meta charset="utf-8" />
       <meta
@@ -14,7 +14,6 @@
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/combine/npm/normalize.css@8.0.1,npm/skeleton-css@2.0.4/css/skeleton.min.css"
       />
-
       <!-- Bulma CSS -->
       <link rel="stylesheet" href="../static/css/mybulma.css" />
       <link
@@ -115,11 +114,8 @@
         #sketchpad {
           border: 1px solid #eee;
           cursor: crosshair;
-          background-color: #eee;
-        }
-
-        section {
-          padding: 1rem 1rem;
+          background-image: url(https://source.unsplash.com/IMgXq0p_1yo);
+          background-size: contain;
         }
 
         .text-center {
@@ -137,73 +133,38 @@
     </head>
 
     <body>
-      <section class="hero is-success is-fullheight" id="reactionContainer">
+      <section class="hero is-success is-fullheight">
         <div class="hero-body">
           <div class="container">
-            <div class="steps">
-              <div class="step-item">
-                <div class="step-marker">1</div>
-                <div class="step-details">
-                  <p class="step-title">Reaction</p>
+            <section class="text-center">
+              <h2>Tremor Test</h2>
+              <h5>
+                Trace the Spiral below as best as you can in a single go
+              </h5>
+            </section>
+            <section>
+              <div class="row">
+                <div class="two-thirds column">
+                  <div id="sketchpad"></div>
                 </div>
               </div>
-              <div class="step-item is-active">
-                <div class="step-marker">2</div>
-                <div class="step-details">
-                  <p class="step-title">Spiral</p>
+            </section>
+            <section>
+              <div class="row">
+                <div class="one-half column">
+                  <button class="u-full-width" id="undo">Undo</button>
                 </div>
-              </div>
-              <div class="step-item">
-                <div class="step-marker">3</div>
-                <div class="step-details">
-                  <p class="step-title">Tremor</p>
+                <div class="one-half column">
+                  <button class="u-full-width" id="redo">Redo</button>
                 </div>
+                <button class="u-full-width" id="clear">Clear</button>
               </div>
-              <div class="step-item">
-                <div class="step-marker">4</div>
-                <div class="step-details">
-                  <p class="step-title">Finish</p>
-                </div>
-              </div>
-              <div class="steps-content" style="padding-top:30%;">
-                <div class="step-content has-text-centered is-active">
-                  <div class="container">
-                    <section class="text-center">
-                      <h2>Responsive Sketchpad</h2>
-                      <h5>
-                        A completely responsive, HTML5 canvas sketchpad for use
-                        on desktop and mobile browsers
-                      </h5>
-                    </section>
-                    <div class="container">
-                      <div class="columns">
-                        <div class="column is-two-thirds">
-                          <div id="sketchpad"></div>
-                          <em>Try resizing the window!</em>
-                        </div>
-                        <div class="column is-one-third">
-                          <div class="row">
-                            <div class="column is-half">
-                              <button class="button" id="undo">
-                                Undo
-                              </button>
-                            </div>
-                            <div class="column is-half">
-                              <button class="button" id="redo">
-                                Redo
-                              </button>
-                            </div>
-                            <button class="button" id="clear">
-                              Clear
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            </section>
+            <section>
+              <button>
+                Next
+              </button>
+            </section>
           </div>
         </div>
       </section>
@@ -211,6 +172,7 @@
 
       <!-- Custom scripts for this template -->
       <script src="https://cdn.jsdelivr.net/npm/responsive-sketchpad@0.2.1/responsive-sketchpad.min.js"></script>
+
       <script src="{{ url_for('static', filename='javascript/tremor.js') }}"></script>
     </body>
   </html>
