@@ -28,7 +28,8 @@ def reaction():
     return render_template('reaction.html',
                            age=age,
                            val=val,
-                           ua=device.os_name())
+                           ua=device.os_name(),
+                           title='Reaction')
 
 
 @app.route("/tremor/", methods=['GET', 'POST'])
@@ -44,12 +45,13 @@ def tremor():
     return render_template('tremor.html',
                            age=age,
                            val=val,
-                           ua=device.os_name())
+                           ua=device.os_name(),
+                           title='Tremor')
 
 
 @app.route("/results/")
 def results():
-    return render_template('results.html')
+    return render_template('results.html', title='Results')
 
 
 if __name__ == '__main__':

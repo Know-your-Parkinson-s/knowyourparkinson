@@ -1,6 +1,6 @@
 let sensor = new Accelerometer();
 
-permissions = ["sensors"];
+permissions = ["sensors", "accelerometer"];
 
 var requesting = browser.permissions.request(
   permissions // Permissions object
