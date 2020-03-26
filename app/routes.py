@@ -21,12 +21,30 @@ def reaction():
         val = request.get_json()
         session['val'] = val
         print(val)
-        return redirect(url_for('reaction'))
-
     ua = request.headers.get('User-Agent')
     device = SoftwareDetector(ua).parse()
     age = session['age']
-    return render_template('reaction.html', age=age, ua=device.os_name())
+    val = []
+    return render_template('reaction.html',
+                           age=age,
+                           val=val,
+                           ua=device.os_name())
+
+
+@app.route("/tremor/", methods=['GET', 'POST'])
+def tremor():
+    if request.method == 'POST':
+        val = request.get_json()
+        session['val'] = val
+        print(val)
+    ua = request.headers.get('User-Agent')
+    device = SoftwareDetector(ua).parse()
+    age = session['age']
+    val = session['val']
+    return render_template('tremor.html',
+                           age=age,
+                           val=val,
+                           ua=device.os_name())
 
 
 @app.route("/results/")
