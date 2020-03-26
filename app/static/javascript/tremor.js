@@ -9,14 +9,12 @@ function setLineColor(e) {
   }
   pad.setLineColor(color);
 }
-document.getElementById("line-color-input").oninput = setLineColor;
 
 // setLineSize
 function setLineSize(e) {
   var size = e.target.value;
   pad.setLineSize(size);
 }
-document.getElementById("line-size-input").oninput = setLineSize;
 
 // undo
 function undo() {

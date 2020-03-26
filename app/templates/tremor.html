@@ -10,6 +10,11 @@
         content="width=device-width, initial-scale=1, shrink-to-fit=no"
       />
 
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/combine/npm/normalize.css@8.0.1,npm/skeleton-css@2.0.4/css/skeleton.min.css"
+      />
+
       <!-- Bulma CSS -->
       <link rel="stylesheet" href="../static/css/mybulma.css" />
       <link
@@ -106,27 +111,15 @@
       <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
       <meta name="theme-color" content="#ffffff" />
 
-      <link
-        href="//fonts.googleapis.com/css?family=Raleway:400,300,600"
-        rel="stylesheet"
-        type="text/css"
-      />
-
-      
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/combine/npm/normalize.css@8.0.1,npm/skeleton-css@2.0.4/css/skeleton.min.css"
-    />
-
       <style>
         #sketchpad {
           border: 1px solid #eee;
           cursor: crosshair;
-          background-color: white;
+          background-color: #eee;
         }
 
         section {
-          padding: 2rem 0;
+          padding: 1rem 1rem;
         }
 
         .text-center {
@@ -176,56 +169,38 @@
                 <div class="step-content has-text-centered is-active">
                   <div class="container">
                     <section class="text-center">
-                      <h2>Tremor Test</h2>
+                      <h2>Responsive Sketchpad</h2>
                       <h5>
-                        A completely responsive, HTML5 canvas sketchpad for use on desktop and
-                        mobile browsers
+                        A completely responsive, HTML5 canvas sketchpad for use
+                        on desktop and mobile browsers
                       </h5>
                     </section>
-                    <section>
-                      <div class="row">
-                        <div class="two-thirds column">
+                    <div class="container">
+                      <div class="columns">
+                        <div class="column is-two-thirds">
                           <div id="sketchpad"></div>
                           <em>Try resizing the window!</em>
                         </div>
-                        <div class="one-third column">
-                          <label for="line-color-input">Set Line Color</label>
-                          <input
-                            class="u-full-width"
-                            type="text"
-                            value="#000000"
-                            id="line-color-input"
-                          />
-                          <label for="line-size-input">Set Line Size</label>
-                          <input
-                            class="u-full-width"
-                            type="number"
-                            value="5"
-                            id="line-size-input"
-                          />
+                        <div class="column is-one-third">
                           <div class="row">
-                            <div class="one-half column">
-                              <button class="u-full-width" id="undo">Undo</button>
+                            <div class="column is-half">
+                              <button class="button" id="undo">
+                                Undo
+                              </button>
                             </div>
-                            <div class="one-half column">
-                              <button class="u-full-width" id="redo">Redo</button>
+                            <div class="column is-half">
+                              <button class="button" id="redo">
+                                Redo
+                              </button>
                             </div>
-                            <button class="u-full-width" id="clear">Clear</button>
+                            <button class="button" id="clear">
+                              Clear
+                            </button>
                           </div>
                         </div>
                       </div>
-                    </section>
-                    <section>
-                      <h3>Basic Usage</h3>
-                    </section>
+                    </div>
                   </div>
-                </div>
-              </div>
-              <div class="steps-content" style="padding-top:30%;">
-                <div class="step-content has-text-centered is-active">
-                  <div class="container">
-                    <h2 class="subtitle"></h2>
-
                 </div>
               </div>
             </div>
@@ -236,7 +211,6 @@
 
       <!-- Custom scripts for this template -->
       <script src="https://cdn.jsdelivr.net/npm/responsive-sketchpad@0.2.1/responsive-sketchpad.min.js"></script>
-
       <script src="{{ url_for('static', filename='javascript/tremor.js') }}"></script>
     </body>
   </html>
