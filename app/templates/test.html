@@ -1,46 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta charset="utf-8" />
+    <title>Responsive Sketchpad</title>
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link
+      href="//fonts.googleapis.com/css?family=Raleway:400,300,600"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/combine/npm/normalize.css@8.0.1,npm/skeleton-css@2.0.4/css/skeleton.min.css"
+    />
+
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+
+    <style>
+      #sketchpad {
+        border: 1px solid #eee;
+        cursor: crosshair;
+      }
+
+      section {
+        padding: 2rem 0;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      @media (min-width: 550px) {
+        section:first-child {
+          margin-top: 8rem;
+        }
+      }
+
+      input {
+        font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial,
+          sans-serif;
+      }
+    </style>
   </head>
   <body>
-    <table>
-      <tr>
-        <td>API used</td>
-        <td id="moApi"></td>
-      </tr>
-      <tr>
-        <td>linear acceleration (excl. gravity)</td>
-        <td id="moAccel"></td>
-      </tr>
-      <tr>
-        <td>acceleration incl. gravity</td>
-        <td id="moAccelGrav"></td>
-      </tr>
-      <tr>
-        <td>rotation rate</td>
-        <td id="moRotation"></td>
-      </tr>
-      <tr>
-        <td>interval (ms)</td>
-        <td id="moInterval"></td>
-      </tr>
-    </table>
+    <div class="container">
+      <section class="text-center">
+        <h2>Responsive Sketchpad</h2>
+        <h5>
+          A completely responsive, HTML5 canvas sketchpad for use on desktop and
+          mobile browsers
+        </h5>
+      </section>
+      <section>
+        <div class="row">
+          <div class="two-thirds column">
+            <div id="sketchpad"></div>
+            <em>Try resizing the window!</em>
+          </div>
+          <div class="one-third column">
+            <label for="line-color-input">Set Line Color</label>
+            <input
+              class="u-full-width"
+              type="text"
+              value="#000000"
+              id="line-color-input"
+            />
+            <label for="line-size-input">Set Line Size</label>
+            <input
+              class="u-full-width"
+              type="number"
+              value="5"
+              id="line-size-input"
+            />
+            <div class="row">
+              <div class="one-half column">
+                <button class="u-full-width" id="undo">Undo</button>
+              </div>
+              <div class="one-half column">
+                <button class="u-full-width" id="redo">Redo</button>
+              </div>
+              <button class="u-full-width" id="clear">Clear</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h3>Basic Usage</h3>
+        <pre><code>var Sketchpad = require('responsive-sketchpad');
 
-    <p>
-      <small
-        >Demo based on
-        <a
-          href="https://www.html5rocks.com/en/tutorials/device/orientation/"
-          target="_blank"
-          rel="noopener"
-          >HTML5 Rocks</a
-        >
-        article.</small
-      >
-    </p>
+// Initialize Sketchpad
+var el = document.getElementById('sketchpad');
+var pad = new Sketchpad(el, {
+    line: {
+        color: '#f44335',
+        size: 5
+    }
+});
+
+// Set line color
+pad.setLineColor('#f44336');
+
+// Set line size
+pad.setLineSize(10);
+
+// Undo
+pad.undo();
+
+// Redo
+pad.redo();
+
+// Clear canvas
+pad.clear();
+
+// Resize canvase
+pad.resize(newWidth);
+</code></pre>
+      </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/responsive-sketchpad@0.2.1/responsive-sketchpad.min.js"></script>
     <script src="../static/javascript/test.js"></script>
   </body>
 </html>
