@@ -1,48 +1,55 @@
-if ('LinearAccelerationSensor' in window && 'Gyroscope' in window) {
-  document.getElementById('moApi').innerHTML = 'Generic Sensor API';
-  
+if ("LinearAccelerationSensor" in window && "Gyroscope" in window) {
+  document.getElementById("moApi").innerHTML = "Generic Sensor API";
+
   let lastReadingTimestamp;
   let accelerometer = new LinearAccelerationSensor();
-  accelerometer.addEventListener('reading', e => {
+  accelerometer.addEventListener("reading", e => {
     if (lastReadingTimestamp) {
-      intervalHandler(Math.round(accelerometer.timestamp - lastReadingTimestamp));
+      intervalHandler(
+        Math.round(accelerometer.timestamp - lastReadingTimestamp)
+      );
     }
-    lastReadingTimestamp = accelerometer.timestamp
-    accelerationHandler(accelerometer, 'moAccel');
+    lastReadingTimestamp = accelerometer.timestamp;
+    accelerationHandler(accelerometer, "moAccel");
   });
   accelerometer.start();
-  
-  if ('GravitySensor' in window) {
+
+  if ("GravitySensor" in window) {
     let gravity = new GravitySensor();
-    gravity.addEventListener('reading', e => accelerationHandler(gravity, 'moAccelGrav'));
+    gravity.addEventListener("reading", e =>
+      accelerationHandler(gravity, "moAccelGrav")
+    );
     gravity.start();
   }
-  
+
   let gyroscope = new Gyroscope();
-  gyroscope.addEventListener('reading', e => rotationHandler({
-    alpha: gyroscope.x,
-    beta: gyroscope.y,
-    gamma: gyroscope.z
-  }));
+  gyroscope.addEventListener("reading", e =>
+    rotationHandler({
+      alpha: gyroscope.x,
+      beta: gyroscope.y,
+      gamma: gyroscope.z
+    })
+  );
   gyroscope.start();
-  
-} else if ('DeviceMotionEvent' in window) {
-  document.getElementById('moApi').innerHTML = 'Device Motion API';
-  
-  var onDeviceMotion = function (eventData) {
-    accelerationHandler(eventData.acceleration, 'moAccel');
-    accelerationHandler(eventData.accelerationIncludingGravity, 'moAccelGrav');
+} else if ("DeviceMotionEvent" in window) {
+  document.getElementById("moApi").innerHTML = "Device Motion API";
+
+  var onDeviceMotion = function(eventData) {
+    accelerationHandler(eventData.acceleration, "moAccel");
+    accelerationHandler(eventData.accelerationIncludingGravity, "moAccelGrav");
     rotationHandler(eventData.rotationRate);
     intervalHandler(eventData.interval);
-  }
-  
-  window.addEventListener('devicemotion', onDeviceMotion, false);
+  };
+
+  window.addEventListener("devicemotion", onDeviceMotion, false);
 } else {
-  document.getElementById('moApi').innerHTML = 'No Accelerometer & Gyroscope API available';
+  document.getElementById("moApi").innerHTML =
+    "No Accelerometer & Gyroscope API available";
 }
 
 function accelerationHandler(acceleration, targetId) {
-  var info, xyz = "[X, Y, Z]";
+  var info,
+    xyz = "[X, Y, Z]";
 
   info = xyz.replace("X", acceleration.x && acceleration.x.toFixed(3));
   info = info.replace("Y", acceleration.y && acceleration.y.toFixed(3));
@@ -51,7 +58,8 @@ function accelerationHandler(acceleration, targetId) {
 }
 
 function rotationHandler(rotation) {
-  var info, xyz = "[X, Y, Z]";
+  var info,
+    xyz = "[X, Y, Z]";
 
   info = xyz.replace("X", rotation.alpha && rotation.alpha.toFixed(3));
   info = info.replace("Y", rotation.beta && rotation.beta.toFixed(3));
@@ -61,3 +69,4 @@ function rotationHandler(rotation) {
 
 function intervalHandler(interval) {
   document.getElementById("moInterval").innerHTML = interval;
+}
