@@ -1,17 +1,11 @@
-var el = document.getElementById("sketchpad");
-var pad = new Sketchpad(el);
+var pad = new Sketchpad({
+  element: "#sketchpad",
+  width: 350,
+  height: 350
+});
 
-// setLineColor
-function setLineColor() {
-  pad.setLineColor("#FFFFFF");
-}
-setLineColor();
-
-// setLineSize
-function setLineSize(e) {
-  var size = e.target.value;
-  pad.setLineSize(size);
-}
+pad.color = "#000";
+pad.penSize = 10;
 
 // undo
 function undo() {
@@ -30,8 +24,3 @@ function clear() {
   pad.clear();
 }
 document.getElementById("clear").onclick = clear;
-
-// resize
-window.onresize = function(e) {
-  pad.resize(el.offsetWidth);
-};

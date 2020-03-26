@@ -108,10 +108,10 @@
 
       <style>
         #sketchpad {
-          border: 0px solid #eee;
+          border: 2px solid #eee;
           cursor: crosshair;
-          background-image: url('{{url_for("static", filename= "img/spiral.png")}}');
-          background-size: contain;
+          background-image: url(https://source.unsplash.com/IMgXq0p_1yo);
+          background-size: cover;
         }
       </style>
 
@@ -147,51 +147,51 @@
                   <p class="step-title">Finish</p>
                 </div>
               </div>
-              <div class="steps-content">
+              <div class="steps-content" style="padding-top:30%;">
                 <div class="step-content has-text-centered is-active">
                   <div class="container">
                     <h2 class="subtitle"></h2>
                     <div class="container">
                       <div class="text-center">
-                        <h2 class="title">Tremor Test</h2>
-                        <h5 class="subtitle">
+                        <h2>Tremor Test</h2>
+                        <h5>
                           Trace the Spiral below as best as you can in a single
                           go
                         </h5>
                       </div>
-                      <div
-                        class="container"
-                        style="padding-top:10% ;padding-bottom: 10%;"
-                      >
-                        <canvas id="sketchpad"></canvas>
+                      <div>
+                        <div class="columns">
+                          <div class="column">
+                            <canvas id="sketchpad"></canvas>
+                          </div>
+                        </div>
                       </div>
-                      <div class="columns is-mobile">
-                        <div class="column">
-                          <button class="button" id="undo">Undo</button>
-                        </div>
-                        <div class="column">
-                          <button class="button" id="redo">Redo</button>
-                        </div>
-                        <div class="column">
+                      <div>
+                        <div class="columns">
+                          <div class="column">
+                            <button class="button" id="undo">Undo</button>
+                          </div>
+                          <div class="column">
+                            <button class="button" id="redo">Redo</button>
+                          </div>
                           <button class="button" id="clear">Clear</button>
-                        </div>
-                        <div class="column">
-                          <form>
-                            <a href="{{ url_for('tremor') }}">
-                              <button
-                                type="button"
-                                value="submit"
-                                id="submitButton"
-                                class="button is-dark"
-                              >
-                                Submit
-                              </button>
-                            </a>
-                          </form>
                         </div>
                       </div>
                     </div>
-                    <div class="container"></div>
+                    <div class="container">
+                      <form>
+                        <a href="{{ url_for('tremor') }}">
+                          <button
+                            type="button"
+                            value="submit"
+                            id="submitButton"
+                            class="button is-dark"
+                          >
+                            Submit
+                          </button>
+                        </a>
+                      </form>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -209,6 +209,7 @@
       ></script>
 
       <script src="{{ url_for('static', filename='javascript/sketchpad-min.js') }}"></script>
+
       <script src="{{ url_for('static', filename='javascript/tremor.js') }}"></script>
     </body>
   </html>
