@@ -176,7 +176,7 @@
             Score
           </h1>
           <h2 class="subtitle">
-            {{score}}
+            {{55-score}}
           </h2>
         </div>
       </div>
@@ -191,6 +191,16 @@
           <h2 class="subtitle">
             <canvas id="myChart" width="300" height="300"></canvas>
           </h2>
+          {% if (score < 20) %}
+          <h2 class="subtitle">
+            You did great!
+          </h2>
+          {% else %}
+          <h2 class="subtitle">
+            You score lower than the average person. You might want to get
+            tested if the symptoms continue
+          </h2>
+          {% endif %}
         </div>
       </div>
     </section>
@@ -211,7 +221,7 @@
           labels: ["Score", "Deficit"],
           datasets: [
             {
-              data: [{{ score }}, {{ 55-score }}],
+              data: [{{ 55-score }}, {{ score }}],
               backgroundColor: ['red']
             }
           ],
