@@ -30,3 +30,17 @@ document.getElementById("download").onclick = function() {
     saveAs(blob, "spiral.jpg");
   });
 };
+
+document.getElementById("saver").onclick = function() {
+  val = document.getElementById("percent").value;
+
+  var pdata = { percent: parseInt(val) };
+
+  fetch("/test/", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(pdata)
+  });
+};

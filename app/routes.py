@@ -41,6 +41,9 @@ def test():
         if 'score' in data:
             session['score'] = data['score']
             print(data)
+        if 'percent' in data:
+            session['percent'] = data['percent']
+            print(data)
     return render_template('test.html', title='Symptom Tracker')
 
 
@@ -56,6 +59,8 @@ def results():
     age = session['age']
     score = session['score']
     val = session['val']
+    percent = session['percent']
+
     avg = statistics.mean(val)
     if avg < 200:
         pass
@@ -66,6 +71,19 @@ def results():
     elif avg < 550:
         score += 3
     elif avg < 650:
+        score += 4
+    else:
+        score += 5
+
+    if int(percent) > 85:
+        pass
+    elif int(percent) > 70:
+        score += 1
+    elif int(percent) < 65:
+        score += 2
+    elif int(percent) < 60:
+        score += 3
+    elif int(percent) < 50:
         score += 4
     else:
         score += 5
