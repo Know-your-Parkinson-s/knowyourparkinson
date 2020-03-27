@@ -159,8 +159,8 @@
               <li class="nav-item mx-0 mx-lg-1">
                 <a
                   class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                  href="#send"
-                  >Send</a
+                  href="{{url_for('index')}}"
+                  >Home</a
                 >
               </li>
             </ul>
@@ -189,20 +189,7 @@
             Chart
           </h1>
           <h2 class="subtitle">
-            Some Other Text
-          </h2>
-        </div>
-      </div>
-    </section>
-
-    <section class="hero is-info is-fullheight-with-navbar" id="send">
-      <div class="hero-body">
-        <div class="container">
-          <h1 class="Slide 2">
-            Send
-          </h1>
-          <h2 class="subtitle">
-            Some Other Text
+            <canvas id="myChart" width="300" height="300"></canvas>
           </h2>
         </div>
       </div>
@@ -215,7 +202,23 @@
       src="https://kit.fontawesome.com/b5c8bf5f8c.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <script>
+      var ctx = document.getElementById("myChart");
+      var myRadarChart = new Chart(ctx, {
+        type: "doughnut",
+        data: {
+          labels: ["Score", "Deficit"],
+          datasets: [
+            {
+              data: [{{ score }}, {{ 55-score }}],
+              backgroundColor: ['red']
+            }
+          ],
+        },
 
+      });
+    </script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
