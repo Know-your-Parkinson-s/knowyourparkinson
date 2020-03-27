@@ -175,6 +175,18 @@
                         <div class="column">
                           <button class="button" id="clear">Clear</button>
                         </div>
+                      </div>
+                      <div class="columns is-mobile">
+                        <div class="column">
+                          <button
+                            type="button"
+                            id="download"
+                            class="button is-dark"
+                          >
+                            Download
+                          </button>
+                        </div>
+
                         <div class="column">
                           <form>
                             <a href="{{ url_for('tremor') }}">
@@ -207,7 +219,7 @@
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous"
       ></script>
-
+      <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
       <script src="{{ url_for('static', filename='javascript/sketchpad-min.js') }}"></script>
       <script src="{{ url_for('static', filename='javascript/tremor.js') }}"></script>
     </body>

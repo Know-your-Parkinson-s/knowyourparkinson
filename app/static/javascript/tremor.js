@@ -24,3 +24,9 @@ function clear() {
   pad.clear();
 }
 document.getElementById("clear").onclick = clear;
+
+document.getElementById("download").onclick = function() {
+  document.getElementById("sketchpad").toBlob(function(blob) {
+    saveAs(blob, "spiral.jpg");
+  });
+};
