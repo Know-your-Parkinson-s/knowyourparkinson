@@ -106,6 +106,15 @@
       <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
       <meta name="theme-color" content="#ffffff" />
 
+      <style>
+        #sketchpad {
+          border: 0px solid #eee;
+          cursor: crosshair;
+          background-image: url('{{url_for("static", filename= "img/spiral.png")}}');
+          background-size: contain;
+        }
+      </style>
+
       <title>{{ title }}</title>
     </head>
 
@@ -116,33 +125,27 @@
             <div class="steps" id="stepsDemo">
               <div class="step-item is-info is-active">
                 <div class="step-marker">1</div>
-                <div class="step-details">
-                  <p class="step-title">Account</p>
-                </div>
+                <div class="step-details"></div>
               </div>
               <div class="step-item is-info">
                 <div class="step-marker">2</div>
-                <div class="step-details">
-                  <p class="step-title">Profile</p>
-                </div>
+                <div class="step-details"></div>
               </div>
               <div class="step-item is-info">
                 <div class="step-marker">3</div>
-                <div class="step-details">
-                  <p class="step-title">Social</p>
-                </div>
+                <div class="step-details"></div>
               </div>
               <div class="step-item is-info">
                 <div class="step-marker">4</div>
-                <div class="step-details">
-                  <p class="step-title">Finish</p>
-                </div>
+                <div class="step-details"></div>
               </div>
               <div class="steps-content">
                 <div class="step-content has-text-centered is-active">
                   <div class="field is-horizontal">
                     <div class="field-label is-normal">
-                      <label class="label">Q1</label>
+                      <label class="label"
+                        >Tightness or stiffness of the limbs or torso</label
+                      >
                     </div>
                     <div class="select has-text-black	">
                       <select>
@@ -157,7 +160,11 @@
                   </div>
                   <div class="field is-horizontal">
                     <div class="field-label is-normal">
-                      <label class="label">Q2</label>
+                      <label class="label"
+                        >Balance/Walking Difficulties - Taking small or slow
+                        steps; a shuffling giat; decrease in the natural swing
+                        of the arms</label
+                      >
                     </div>
                     <div class="select has-text-black	">
                       <select>
@@ -172,7 +179,11 @@
                   </div>
                   <div class="field is-horizontal">
                     <div class="field-label is-normal">
-                      <label class="label">Q3</label>
+                      <label class="label"
+                        >Fatigue/Sleep Disturbances - Difficulty falling asleep
+                        or staying asleep; vivd dreams; daytime
+                        sleepiness.</label
+                      >
                     </div>
                     <div class="select has-text-black	">
                       <select>
@@ -183,53 +194,99 @@
                         <option>Frequently</option>
                         <option>Always</option>
                       </select>
+                    </div>
+                    <div class="field is-horizontal">
+                      <div class="field-label is-normal">
+                        <label class="label"
+                          >Feeling nervous or irritable; feelign sad, empty and
+                          hopeless</label
+                        >
+                      </div>
+                      <div class="select has-text-black	">
+                        <select>
+                          <option>Never</option>
+                          <option>Rarely</option>
+                          <option>Occasionally</option>
+                          <option>Sometimes</option>
+                          <option>Frequently</option>
+                          <option>Always</option>
+                        </select>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div class="step-content has-text-centered">
-                  <div class="field is-horizontal">
-                    <div class="field-label is-normal">
-                      <label class="label">Firstname</label>
+                <div class="step-content has-text-centered is-active">
+                  <div class="container">
+                    <h2 class="subtitle"></h2>
+                    <div class="container" id="tapTarget">
+                      <div class="card">
+                        <div class="card-content">
+                          <h3 class="subtitle">
+                            Tap on this box whenever you're ready, and then tap
+                            when the background color changes
+                          </h3>
+
+                          <p>UA: {{ ua }}</p>
+                          <p>Age: {{ age }}</p>
+
+                          <p id="printReactionTime"></p>
+                          <p id="countTime"></p>
+                        </div>
+                      </div>
                     </div>
-                    <div class="select has-text-black	">
-                      <select>
-                        <option>Never</option>
-                        <option>Rarely</option>
-                        <option>Occasionally</option>
-                        <option>Sometimes</option>
-                        <option>Frequently</option>
-                        <option>Always</option>
-                      </select>
+                    <div class="container" style="padding: 30%;">
+                      <form>
+                        <a href="{{ url_for('tremor') }}">
+                          <button
+                            type="button"
+                            value="submit"
+                            id="submitButton"
+                            class="button is-dark"
+                          >
+                            Submit
+                          </button>
+                        </a>
+                      </form>
                     </div>
                   </div>
-                  <div class="field is-horizontal">
-                    <div class="field-label is-normal">
-                      <label class="label">Last name</label>
-                    </div>
-                    <div class="select has-text-black	">
-                      <select>
-                        <option>Never</option>
-                        <option>Rarely</option>
-                        <option>Occasionally</option>
-                        <option>Sometimes</option>
-                        <option>Frequently</option>
-                        <option>Always</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="field is-horizontal">
-                    <div class="field-label is-normal">
-                      <label class="label">Email</label>
-                    </div>
-                    <div class="select has-text-black	">
-                      <select>
-                        <option>Never</option>
-                        <option>Rarely</option>
-                        <option>Occasionally</option>
-                        <option>Sometimes</option>
-                        <option>Frequently</option>
-                        <option>Always</option>
-                      </select>
+                </div>
+
+                <div class="step-content has-text-centered is-active">
+                  <div class="container">
+                    <h2 class="subtitle"></h2>
+                    <div class="container">
+                      <div class="text-center">
+                        <h5 class="subtitle">
+                          Trace the Spiral below as best as you can in a single
+                          go
+                        </h5>
+                      </div>
+                      <div
+                        class="container"
+                        style="padding-top:10% ;padding-bottom: 10%;"
+                      >
+                        <canvas id="sketchpad"></canvas>
+                      </div>
+                      <div class="columns is-mobile">
+                        <div class="column">
+                          <button class="button" id="undo">Undo</button>
+                        </div>
+                        <div class="column">
+                          <button class="button" id="redo">Redo</button>
+                        </div>
+                        <div class="column">
+                          <button class="button" id="clear">Clear</button>
+                        </div>
+                        <div class="column">
+                          <button
+                            type="button"
+                            id="download"
+                            class="button is-dark"
+                          >
+                            Save
+                          </button>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -237,7 +294,10 @@
                 <div class="step-content has-text-centered">
                   <div class="field is-horizontal">
                     <div class="field-label is-normal">
-                      <label class="label">Firstname</label>
+                      <label class="label"
+                        >Difficulty swallowing; drolling; excessive saliva in
+                        the mouth</label
+                      >
                     </div>
                     <div class="select has-text-black	">
                       <select>
@@ -252,7 +312,10 @@
                   </div>
                   <div class="field is-horizontal">
                     <div class="field-label is-normal">
-                      <label class="label">Last name</label>
+                      <label class="label"
+                        >Nausea; vomiting; diarrhea; infrequent bowel
+                        movements</label
+                      >
                     </div>
                     <div class="select has-text-black	">
                       <select>
@@ -267,7 +330,9 @@
                   </div>
                   <div class="field is-horizontal">
                     <div class="field-label is-normal">
-                      <label class="label">Email</label>
+                      <label class="label"
+                        >Changes in sexual desire; erectile dysfunction</label
+                      >
                     </div>
                     <div class="select has-text-black	">
                       <select>
@@ -280,10 +345,41 @@
                       </select>
                     </div>
                   </div>
-                </div>
-
-                <div class="step-content has-text-centered">
-                  <h1 class="title is-4">Your account is now created!</h1>
+                  <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                      <label class="label"
+                        >Seeing, hearing or sensing things that are not
+                        there</label
+                      >
+                    </div>
+                    <div class="select has-text-black	">
+                      <select>
+                        <option>Never</option>
+                        <option>Rarely</option>
+                        <option>Occasionally</option>
+                        <option>Sometimes</option>
+                        <option>Frequently</option>
+                        <option>Always</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                      <label class="label"
+                        >Believing things that are not true</label
+                      >
+                    </div>
+                    <div class="select has-text-black	">
+                      <select>
+                        <option>Never</option>
+                        <option>Rarely</option>
+                        <option>Occasionally</option>
+                        <option>Sometimes</option>
+                        <option>Frequently</option>
+                        <option>Always</option>
+                      </select>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="steps-actions">
@@ -302,7 +398,16 @@
       </section>
 
       <!-- Scripts -->
+      <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"
+      ></script>
+      <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
+      <script src="{{ url_for('static', filename='javascript/sketchpad-min.js') }}"></script>
+      <script src="{{ url_for('static', filename='javascript/tremor.js') }}"></script>
       <script src="https://cdn.jsdelivr.net/npm/bulma-steps@2.2.1/dist/js/bulma-steps.min.js"></script>
+      <script src="{{ url_for('static', filename='javascript/reaction.js') }}"></script>
       <script>
         bulmaSteps.attach();
       </script>

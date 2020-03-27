@@ -11,7 +11,7 @@ def index():
     if request.method == 'POST':
         age = request.form.get('ageGroup')
         session['age'] = age
-        return redirect(url_for('test', question=1))
+        return redirect(url_for('test'))
     return render_template("index.html", title='Home')
 
 
@@ -30,9 +30,9 @@ def reaction():
                            title='Reaction')
 
 
-@app.route("/test/<question>")
-def test(question):
-    return render_template('test.html', title='Question ' + question)
+@app.route("/test/")
+def test():
+    return render_template('test.html', title='Symptom Tracker')
 
 
 @app.route("/tremor/", methods=['GET', 'POST'])
