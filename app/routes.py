@@ -2,6 +2,7 @@ from app import app
 from flask import render_template, request, redirect, url_for, session
 import requests
 import json
+import statistics
 from device_detector import SoftwareDetector
 
 
@@ -30,12 +31,16 @@ def reaction():
                            title='Reaction')
 
 
-@app.route("/test/")
+@app.route("/test/", methods=['GET', 'POST'])
 def test():
     if request.method == 'POST':
-        res = request.get_json()
-        session['res'] = res
-        print(res)
+        data = request.get_json()
+        if 'values' in data:
+            session['val'] = data['values']
+            print(data)
+        if 'score' in data:
+            session['score'] = data['score']
+            print(data)
     return render_template('test.html', title='Symptom Tracker')
 
 
@@ -48,7 +53,28 @@ def tremor():
 
 @app.route("/results/")
 def results():
-    return render_template('results.html', title='Results')
+    age = session['age']
+    score = session['score']
+    val = session['val']
+    avg = statistics.mean(val)
+    if avg < 200:
+        pass
+    elif avg < 350:
+        score += 1
+    elif avg < 450:
+        score += 2
+    elif avg < 550:
+        score += 3
+    elif avg < 650:
+        score += 4
+    else:
+        score += 5
+
+    return render_template(
+        'results.html',
+        title='Results',
+        score=score,
+    )
 
 
 if __name__ == '__main__':

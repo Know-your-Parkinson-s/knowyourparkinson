@@ -49,12 +49,14 @@ button.onclick = function() {
   tot += parseInt(result);
   console.log(result);
 
-  fetch("/reaction/", {
+  var data = { score: tot };
+
+  fetch("/test/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
     },
-    body: JSON.stringify(tot)
+    body: JSON.stringify(data)
   });
 
   document.getElementById("finalize").style.display = "none";

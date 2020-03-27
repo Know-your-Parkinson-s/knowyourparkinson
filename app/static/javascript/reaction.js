@@ -55,11 +55,13 @@ tapper.onclick = function() {
 };
 
 function sender() {
-  fetch("/reaction/", {
+  var some = { values: vals };
+
+  fetch("/test/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
     },
-    body: JSON.stringify(vals)
+    body: JSON.stringify(some)
   });
 }
