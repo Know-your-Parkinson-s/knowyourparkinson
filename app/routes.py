@@ -32,6 +32,10 @@ def reaction():
 
 @app.route("/test/")
 def test():
+    if request.method == 'POST':
+        res = request.get_json()
+        session['res'] = res
+        print(res)
     return render_template('test.html', title='Symptom Tracker')
 
 
