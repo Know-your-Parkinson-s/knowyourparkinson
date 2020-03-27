@@ -11,7 +11,7 @@ def index():
     if request.method == 'POST':
         age = request.form.get('ageGroup')
         session['age'] = age
-        return redirect(url_for('reaction'))
+        return redirect(url_for('test', question=1))
     return render_template("index.html", title='Home')
 
 
@@ -24,12 +24,15 @@ def reaction():
     ua = request.headers.get('User-Agent')
     device = SoftwareDetector(ua).parse()
     age = session['age']
-    val = []
     return render_template('reaction.html',
                            age=age,
-                           val=val,
                            ua=device.os_name(),
                            title='Reaction')
+
+
+@app.route("/test/<question>")
+def test(question):
+    return render_template('test.html', title='Question ' + question)
 
 
 @app.route("/tremor/", methods=['GET', 'POST'])
@@ -42,16 +45,6 @@ def tremor():
 @app.route("/results/")
 def results():
     return render_template('results.html', title='Results')
-
-
-@app.route("/test/")
-def test():
-    return render_template('test.html')
-
-
-@app.route("/test2/")
-def test2():
-    return render_template('test2.html')
 
 
 if __name__ == '__main__':

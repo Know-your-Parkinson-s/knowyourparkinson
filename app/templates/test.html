@@ -1,80 +1,311 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Tremor</title>
-    <meta name="description" content="" />
-    <meta name="author" content="" />
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8" />
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no"
+      />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <!-- Bulma CSS -->
+      <link rel="stylesheet" href="../static/css/mybulma.css" />
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bulma-extensions@6.2.7/dist/css/bulma-extensions.min.css"
+      />
 
-    <link
-      href="//fonts.googleapis.com/css?family=Raleway:400,300,600"
-      rel="stylesheet"
-      type="text/css"
-    />
+      <!-- Custom fonts for this theme -->
+      <link
+        href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+        rel="stylesheet"
+      />
+      <link
+        href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+        rel="stylesheet"
+        type="text/css"
+      />
+      <link
+        href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic"
+        rel="stylesheet"
+        type="text/css"
+      />
 
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/combine/npm/normalize.css@8.0.1,npm/skeleton-css@2.0.4/css/skeleton.min.css"
-    />
+      <!-- Favicons -->
+      <link
+        rel="apple-touch-icon"
+        sizes="57x57"
+        href="{{ url_for('static', filename = 'logos/favicons/apple-icon-57x57.png')}}"
+      />
+      <link
+        rel="apple-touch-icon"
+        sizes="60x60"
+        href="{{ url_for('static', filename = 'logos/favicons/apple-icon-60x60.png')}}"
+      />
+      <link
+        rel="apple-touch-icon"
+        sizes="60x60"
+        href="{{ url_for('static', filename = 'logos/favicon/apple-icon-72x72.png')}}"
+      />
+      <link
+        rel="apple-touch-icon"
+        sizes="60x60"
+        href="{{ url_for('static', filename = 'logos/favicons/apple-icon-76x76.png')}}"
+      />
+      <link
+        rel="apple-touch-icon"
+        sizes="60x60"
+        href="{{ url_for('static', filename = 'logos/favicons/apple-icon-114x114.png')}}"
+      />
+      <link
+        rel="apple-touch-icon"
+        sizes="60x60"
+        href="{{ url_for('static', filename = 'logos/favicons/apple-icon-120x120.png')}}"
+      />
+      <link
+        rel="apple-touch-icon"
+        sizes="60x60"
+        href="{{ url_for('static', filename = 'logos/favicons/apple-icon-144x144.png')}}"
+      />
+      <link
+        rel="apple-touch-icon"
+        sizes="60x60"
+        href="{{ url_for('static', filename = 'logos/favicons/apple-icon-152x152.png')}}"
+      />
+      <link
+        rel="apple-touch-icon"
+        sizes="60x60"
+        href="{{ url_for('static', filename = 'logos/favicons/apple-icon-180x180.png')}}"
+      />
+      <link
+        rel="apple-touch-icon"
+        sizes="60x60"
+        href="{{ url_for('static', filename = 'logos/favicons/apple-icon-192x192.png')}}"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="{{ url_for('static', filename = 'logos/favicons/favicon-32x32.png')}}"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="96x96"
+        href="{{ url_for('static', filename = 'logos/favicons/favicon-96x96.png')}}"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="16x16"
+        href="{{ url_for('static', filename = 'logos/favicons/favicon-16x16.png')}}"
+      />
+      <meta name="msapplication-TileColor" content="#ffffff" />
+      <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+      <meta name="theme-color" content="#ffffff" />
 
-    <style>
-      #sketchpad {
-        border: 0px solid #eee;
-        cursor: crosshair;
-        margin-bottom: 5%;
-        background-image: url('{{url_for("static", filename= "img/spiral.png")}}');
-        background-size: contain;
-      }
+      <title>{{ title }}</title>
+    </head>
 
-      .text-center {
-        text-align: center;
-      }
-
-      @media (min-width: 550px) {
-        section:first-child {
-          margin-top: 8rem;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <section class="text-center">
-        <h2>Tremor Test</h2>
-        <h5>
-          Trace the Spiral below as best as you can in a single go
-        </h5>
-      </section>
-      <section>
-        <div class="row">
-          <div class="two-thirds column">
-            <canvas id="sketchpad"></canvas>
-          </div>
-          <div class="one-third column">
-            <div class="row">
-              <div class="one-half column">
-                <button class="u-full-width" id="undo">Undo</button>
+    <body>
+      <section class="hero is-success is-fullheight" id="reactionContainer">
+        <div class="hero-body">
+          <div class="container">
+            <div class="steps" id="stepsDemo">
+              <div class="step-item is-info is-active">
+                <div class="step-marker">1</div>
+                <div class="step-details">
+                  <p class="step-title">Account</p>
+                </div>
               </div>
-              <div class="one-half column">
-                <button class="u-full-width" id="redo">Redo</button>
+              <div class="step-item is-info">
+                <div class="step-marker">2</div>
+                <div class="step-details">
+                  <p class="step-title">Profile</p>
+                </div>
               </div>
-              <button class="u-full-width" id="clear">Clear</button>
+              <div class="step-item is-info">
+                <div class="step-marker">3</div>
+                <div class="step-details">
+                  <p class="step-title">Social</p>
+                </div>
+              </div>
+              <div class="step-item is-info">
+                <div class="step-marker">4</div>
+                <div class="step-details">
+                  <p class="step-title">Finish</p>
+                </div>
+              </div>
+              <div class="steps-content">
+                <div class="step-content has-text-centered is-active">
+                  <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                      <label class="label">Q1</label>
+                    </div>
+                    <div class="select has-text-black	">
+                      <select>
+                        <option>Never</option>
+                        <option>Rarely</option>
+                        <option>Occasionally</option>
+                        <option>Sometimes</option>
+                        <option>Frequently</option>
+                        <option>Always</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                      <label class="label">Q2</label>
+                    </div>
+                    <div class="select has-text-black	">
+                      <select>
+                        <option>Never</option>
+                        <option>Rarely</option>
+                        <option>Occasionally</option>
+                        <option>Sometimes</option>
+                        <option>Frequently</option>
+                        <option>Always</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                      <label class="label">Q3</label>
+                    </div>
+                    <div class="select has-text-black	">
+                      <select>
+                        <option>Never</option>
+                        <option>Rarely</option>
+                        <option>Occasionally</option>
+                        <option>Sometimes</option>
+                        <option>Frequently</option>
+                        <option>Always</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="step-content has-text-centered">
+                  <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                      <label class="label">Firstname</label>
+                    </div>
+                    <div class="select has-text-black	">
+                      <select>
+                        <option>Never</option>
+                        <option>Rarely</option>
+                        <option>Occasionally</option>
+                        <option>Sometimes</option>
+                        <option>Frequently</option>
+                        <option>Always</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                      <label class="label">Last name</label>
+                    </div>
+                    <div class="select has-text-black	">
+                      <select>
+                        <option>Never</option>
+                        <option>Rarely</option>
+                        <option>Occasionally</option>
+                        <option>Sometimes</option>
+                        <option>Frequently</option>
+                        <option>Always</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                      <label class="label">Email</label>
+                    </div>
+                    <div class="select has-text-black	">
+                      <select>
+                        <option>Never</option>
+                        <option>Rarely</option>
+                        <option>Occasionally</option>
+                        <option>Sometimes</option>
+                        <option>Frequently</option>
+                        <option>Always</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="step-content has-text-centered">
+                  <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                      <label class="label">Firstname</label>
+                    </div>
+                    <div class="select has-text-black	">
+                      <select>
+                        <option>Never</option>
+                        <option>Rarely</option>
+                        <option>Occasionally</option>
+                        <option>Sometimes</option>
+                        <option>Frequently</option>
+                        <option>Always</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                      <label class="label">Last name</label>
+                    </div>
+                    <div class="select has-text-black	">
+                      <select>
+                        <option>Never</option>
+                        <option>Rarely</option>
+                        <option>Occasionally</option>
+                        <option>Sometimes</option>
+                        <option>Frequently</option>
+                        <option>Always</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                      <label class="label">Email</label>
+                    </div>
+                    <div class="select has-text-black	">
+                      <select>
+                        <option>Never</option>
+                        <option>Rarely</option>
+                        <option>Occasionally</option>
+                        <option>Sometimes</option>
+                        <option>Frequently</option>
+                        <option>Always</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="step-content has-text-centered">
+                  <h1 class="title is-4">Your account is now created!</h1>
+                </div>
+              </div>
+              <div class="steps-actions">
+                <div class="steps-action">
+                  <a href="#" data-nav="previous" class="button is-light"
+                    >Previous</a
+                  >
+                </div>
+                <div class="steps-action">
+                  <a href="#" data-nav="next" class="button is-light">Next</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
-    </div>
 
-    <!-- Custom scripts for this template -->
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
-    <script src="{{ url_for('static', filename='javascript/sketchpad-min.js') }}"></script>
-    <script src="{{ url_for('static', filename='javascript/tremor.js') }}"></script>
-  </body>
+      <!-- Scripts -->
+      <script src="https://cdn.jsdelivr.net/npm/bulma-steps@2.2.1/dist/js/bulma-steps.min.js"></script>
+      <script>
+        bulmaSteps.attach();
+      </script>
+    </body>
+  </html>
 </html>
