@@ -2,7 +2,7 @@
 <html lang="en">
   <!DOCTYPE html>
   <html lang="en">
-    <head class="has-navbar-fixed-top">
+    <head>
       <!-- Required meta tags -->
       <meta charset="utf-8" />
       <meta
@@ -113,7 +113,7 @@
       <section class="hero is-success is-fullheight" id="reactionContainer">
         <div class="hero-body">
           <div class="container">
-            <div class="steps" id="stepsDemo">
+            <div class="steps">
               <div class="step-item is-active">
                 <div class="step-marker">1</div>
                 <div class="step-details">
@@ -182,31 +182,8 @@
       </section>
       <!-- Scripts -->
 
-      <!-- Fontawesome -->
-      <script
-        src="https://kit.fontawesome.com/b5c8bf5f8c.js"
-        crossorigin="anonymous"
-      ></script>
-
-      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-      <script
-        src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-        crossorigin="anonymous"
-      ></script>
-      <script
-        src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"
-      ></script>
-
-      <script src="https://cdn.jsdelivr.net/npm/bulma-steps@2.2.1/dist/js/bulma-steps.js"></script>
-
       <!-- Custom scripts for this template -->
       <script src="{{ url_for('static', filename='javascript/reaction.js') }}"></script>
-      <script>
-        bulmaSteps.attach();
-      </script>
     </body>
   </html>
 </html>

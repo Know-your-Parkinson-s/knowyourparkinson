@@ -2,7 +2,7 @@
 <html lang="en">
   <!DOCTYPE html>
   <html lang="en">
-    <head class="has-navbar-fixed-top">
+    <head>
       <!-- Required meta tags -->
       <meta charset="utf-8" />
       <meta
@@ -106,11 +106,20 @@
       <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
       <meta name="theme-color" content="#ffffff" />
 
+      <style>
+        #sketchpad {
+          border: 0px solid #eee;
+          cursor: crosshair;
+          background-image: url('{{url_for("static", filename= "img/spiral.png")}}');
+          background-size: contain;
+        }
+      </style>
+
       <title>{{ title }}</title>
     </head>
 
     <body>
-      <section class="hero is-success is-fullheight" id="reactionContainer">
+      <section class="hero is-success" id="reactionContainer">
         <div class="hero-body">
           <div class="container">
             <div class="steps">
@@ -129,52 +138,66 @@
               <div class="step-item">
                 <div class="step-marker">3</div>
                 <div class="step-details">
-                  <p class="step-title">Tremor</p>
-                </div>
-              </div>
-              <div class="step-item">
-                <div class="step-marker">4</div>
-                <div class="step-details">
                   <p class="step-title">Finish</p>
                 </div>
               </div>
-              <div class="steps-content" style="padding-top:30%;">
+              <div class="steps-content">
                 <div class="step-content has-text-centered is-active">
                   <div class="container">
                     <h2 class="subtitle"></h2>
-                    <div class="container" id="tapTarget">
-                      <div class="card">
-                        <div class="card-content">
-                          <h3 class="subtitle">
-                            Tap on this box whenever you're ready, and then tap
-                            when the background color changes
-                          </h3>
+                    <div class="container">
+                      <div class="text-center">
+                        <h2 class="title">Tremor Test</h2>
+                        <h5 class="subtitle">
+                          Trace the Spiral below as best as you can in a single
+                          go
+                        </h5>
+                      </div>
+                      <div
+                        class="container"
+                        style="padding-top:10% ;padding-bottom: 10%;"
+                      >
+                        <canvas id="sketchpad"></canvas>
+                      </div>
+                      <div class="columns is-mobile">
+                        <div class="column">
+                          <button class="button" id="undo">Undo</button>
+                        </div>
+                        <div class="column">
+                          <button class="button" id="redo">Redo</button>
+                        </div>
+                        <div class="column">
+                          <button class="button" id="clear">Clear</button>
+                        </div>
+                      </div>
+                      <div class="columns is-mobile">
+                        <div class="column">
+                          <button
+                            type="button"
+                            id="download"
+                            class="button is-dark"
+                          >
+                            Download
+                          </button>
+                        </div>
 
-                          <p>UA: {{ ua }}</p>
-                          <p>Age: {{ age }}</p>
-                          <p>Vals: {{ val }}</p>
-
-                          <p id="xval"></p>
-                          <p id="yval"></p>
-                          <p id="zval"></p>
-
-                          <p id="printReactionTime"></p>
-                          <p id="countTime"></p>
+                        <div class="column">
+                          <form>
+                            <a href="{{ url_for('tremor') }}">
+                              <button
+                                type="button"
+                                value="submit"
+                                id="submitButton"
+                                class="button is-dark"
+                              >
+                                Submit
+                              </button>
+                            </a>
+                          </form>
                         </div>
                       </div>
                     </div>
-                    <div class="container" style="padding: 30%;">
-                      <form>
-                        <button
-                          type="button"
-                          value="submit"
-                          id="submitButton"
-                          class="button is-dark"
-                        >
-                          Submit
-                        </button>
-                      </form>
-                    </div>
+                    <div class="container"></div>
                   </div>
                 </div>
               </div>
@@ -184,31 +207,15 @@
       </section>
       <!-- Scripts -->
 
-      <!-- Fontawesome -->
-      <script
-        src="https://kit.fontawesome.com/b5c8bf5f8c.js"
-        crossorigin="anonymous"
-      ></script>
-
-      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <!-- Custom scripts for this template -->
       <script
         src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous"
       ></script>
-      <script
-        src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"
-      ></script>
-
-      <script src="https://cdn.jsdelivr.net/npm/bulma-steps@2.2.1/dist/js/bulma-steps.js"></script>
-
-      <!-- Custom scripts for this template -->
+      <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
+      <script src="{{ url_for('static', filename='javascript/sketchpad-min.js') }}"></script>
       <script src="{{ url_for('static', filename='javascript/tremor.js') }}"></script>
-      <script>
-        bulmaSteps.attach();
-      </script>
     </body>
   </html>
 </html>

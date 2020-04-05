@@ -19,6 +19,7 @@
     "node-sass": "^4.13.1"
   },
   "dependencies": {
-    "bootstrap-select": "^1.13.12"
+    "browserify": "^16.5.0",
+    "responsive-sketchpad": "^0.2.1"
   }
 }

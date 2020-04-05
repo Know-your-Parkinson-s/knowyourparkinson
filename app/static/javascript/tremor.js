@@ -1,24 +1,46 @@
-let sensor = new Accelerometer();
+var pad = new Sketchpad({
+  element: "#sketchpad",
+  width: 350,
+  height: 350
+});
 
-permissions = ["sensors"];
+pad.color = "#000";
+pad.penSize = 10;
 
-var requesting = browser.permissions.request(
-  permissions // Permissions object
-);
+// undo
+function undo() {
+  pad.undo();
+}
+document.getElementById("undo").onclick = undo;
 
-sensor.start();
+// redo
+function redo() {
+  pad.redo();
+}
+document.getElementById("redo").onclick = redo;
 
-xval = document.getElementById("xval");
-yval = document.getElementById("yval");
-zval = document.getElementById("zval");
+// clear
+function clear() {
+  pad.clear();
+}
+document.getElementById("clear").onclick = clear;
 
-sensor.onreading = () => {
-  console.log("Acceleration along X-axis: " + sensor.x);
-  console.log("Acceleration along Y-axis: " + sensor.y);
-  console.log("Acceleration along Z-axis: " + sensor.z);
-  xval.innerHTML = sensor.x;
-  yval.innerHTML = sensor.y;
-  zval.innerHTML = sensor.z;
+document.getElementById("download").onclick = function() {
+  document.getElementById("sketchpad").toBlob(function(blob) {
+    saveAs(blob, "spiral.jpg");
+  });
 };
 
-sensor.onerror = event => console.log(event.error.name, event.error.message);
+document.getElementById("saver").onclick = function() {
+  val = document.getElementById("percent").value;
+
+  var pdata = { percent: parseInt(val) };
+
+  fetch("/test/", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(pdata)
+  });
+};
