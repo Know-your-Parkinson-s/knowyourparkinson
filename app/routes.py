@@ -92,7 +92,7 @@ def results():
 
     if age == '30':
         if score > 45:
-            resultText = "You're doing as well as you can! Keep up the good work!"
+            resultText = "You're doing as well as you can. Keep up the good work!"
         elif score < 40:
             resultText = "According to our data, your score is not as high as other people your age. You might want to focus on your health a bit more going forward :)"
         else:
@@ -100,7 +100,7 @@ def results():
 
     elif age == '40':
         if score > 40:
-            resultText = "You're doing as well as you can! Keep up the good work!"
+            resultText = "You're doing as well as you can. Keep up the good work!"
         elif score < 35:
             resultText = "According to our data, your score is not as high as other people your age. You might want to focus on your health a bit more going forward :)"
         else:
@@ -108,7 +108,7 @@ def results():
 
     else:
         if score > 40:
-            resultText = "You're doing as well as you can! Keep up the good work!"
+            resultText = "You're doing as well as you can. Keep up the good work!"
         elif score < 27:
             resultText = "According to our data, your score is not as high as other people your age. You might want to focus on your health a bit more going forward :)"
         else:
