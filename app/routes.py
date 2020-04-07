@@ -88,11 +88,36 @@ def results():
     else:
         score += 5
 
-    return render_template(
-        'results.html',
-        title='Results',
-        score=score,
-    )
+    score = 55 - score
+
+    if age == '30':
+        if score > 45:
+            resultText = "You're doing as well as you can! Keep up the good work!"
+        elif score < 40:
+            resultText = "According to our data, your score is not as high as other people your age. You might want to focus on your health a bit more going forward :)"
+        else:
+            resultText = "Hey there! You scored well enough to be clear of all doubt, but you can be healthier and sharper yet!"
+
+    elif age == '40':
+        if score > 40:
+            resultText = "You're doing as well as you can! Keep up the good work!"
+        elif score < 35:
+            resultText = "According to our data, your score is not as high as other people your age. You might want to focus on your health a bit more going forward :)"
+        else:
+            resultText = "Hey there! You scored well enough to be clear of all doubt, but you can be healthier and sharper yet!"
+
+    else:
+        if score > 40:
+            resultText = "You're doing as well as you can! Keep up the good work!"
+        elif score < 27:
+            resultText = "According to our data, your score is not as high as other people your age. You might want to focus on your health a bit more going forward :)"
+        else:
+            resultText = "Hey there! You scored well enough to be clear of all doubt, but you can be healthier and sharper yet!"
+
+    return render_template('results.html',
+                           title='Results',
+                           score=score,
+                           resultText=resultText)
 
 
 if __name__ == '__main__':

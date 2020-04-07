@@ -149,13 +149,7 @@
                   >Score</a
                 >
               </li>
-              <li class="nav-item mx-0 mx-lg-1">
-                <a
-                  class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                  href="#chart"
-                  >Chart</a
-                >
-              </li>
+
               <li class="nav-item mx-0 mx-lg-1">
                 <a
                   class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
@@ -176,31 +170,75 @@
             Score
           </h1>
           <h2 class="subtitle">
-            {{55-score}}
+            {{score}}
           </h2>
+          <div>
+            <canvas id="myChart" width="300" height="300"></canvas>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="hero is-info is-fullheight-with-navbar" id="chart">
+    <section class="hero is-info is-small">
       <div class="hero-body">
         <div class="container">
-          <h1 class="Slide 2">
-            Chart
-          </h1>
-          <h2 class="subtitle">
-            <canvas id="myChart" width="300" height="300"></canvas>
-          </h2>
-          {% if (score < 20) %}
-          <h2 class="subtitle">
-            You did great!
-          </h2>
-          {% else %}
-          <h2 class="subtitle">
-            You score lower than the average person. You might want to get
-            tested if the symptoms continue
-          </h2>
-          {% endif %}
+          <br /><br />
+          <div>
+            <h2 class="subtitle">
+              {{ resultText }}
+            </h2>
+          </div>
+
+          <a
+            class="typeform-share button"
+            href="https://rohitcufl.typeform.com/to/oO3W5b"
+            data-mode="popup"
+            style="
+              display: inline-block;
+              text-decoration: none;
+              background-color: #4fb0ae;
+              color: white;
+              cursor: pointer;
+              font-family: Helvetica, Arial, sans-serif;
+              font-size: 20px;
+              line-height: 50px;
+              text-align: center;
+              margin: 0;
+              height: 50px;
+              padding: 0px 33px;
+              border-radius: 25px;
+              max-width: 100%;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              font-weight: bold;
+              -webkit-font-smoothing: antialiased;
+              -moz-osx-font-smoothing: grayscale;
+            "
+            target="_blank"
+            >SUS
+          </a>
+          <script>
+            (function () {
+              var qs,
+                js,
+                q,
+                s,
+                d = document,
+                gi = d.getElementById,
+                ce = d.createElement,
+                gt = d.getElementsByTagName,
+                id = "typef_orm_share",
+                b = "https://embed.typeform.com/";
+              if (!gi.call(d, id)) {
+                js = ce.call(d, "script");
+                js.id = id;
+                js.src = b + "embed.js";
+                q = gt.call(d, "script")[0];
+                q.parentNode.insertBefore(js, q);
+              }
+            })();
+          </script>
         </div>
       </div>
     </section>
@@ -221,8 +259,8 @@
           labels: ["Score", "Deficit"],
           datasets: [
             {
-              data: [{{ 55-score }}, {{ score }}],
-              backgroundColor: ['red']
+              data: [{{ score }}, {{ 55-score }}],
+              backgroundColor: ['red', 'black']
             }
           ],
         },
