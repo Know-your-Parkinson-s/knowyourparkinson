@@ -135,17 +135,13 @@
                 <div class="step-marker">3</div>
                 <div class="step-details"></div>
               </div>
-              <div class="step-item is-info">
-                <div class="step-marker">4</div>
-                <div class="step-details"></div>
-              </div>
+
               <div class="steps-content">
                 <div class="step-content has-text-centered is-active">
                   <div class="field is-horizontal">
                     <div class="field-label is-normal">
                       <label class="label"
-                        >Are you experiencing tightness or stiffness of the
-                        limbs or torso</label
+                        >Tremor - Involuntary movement at rest.</label
                       >
                     </div>
                     <div class="select has-text-black">
@@ -162,9 +158,8 @@
                   <div class="field is-horizontal">
                     <div class="field-label is-normal">
                       <label class="label"
-                        >Do you have Balance/Walking Difficulties - Taking small
-                        or slow steps; a shuffling gait; decrease in the natural
-                        swing of the arms</label
+                        >Rigidity - Tightness or stiffness of the limbs or
+                        torso.</label
                       >
                     </div>
                     <div class="select has-text-black">
@@ -181,9 +176,9 @@
                   <div class="field is-horizontal">
                     <div class="field-label is-normal">
                       <label class="label"
-                        >Have you experienced fatigue/sleep Disturbances -
-                        Difficulty falling asleep or staying asleep; vivid
-                        dreams; daytime sleepiness.</label
+                        >Balance/Walking Difficulties - Taking small or slow
+                        steps; a shuffling gait; decrease in the natural swing
+                        of the arms.</label
                       >
                     </div>
                     <div class="select has-text-black">
@@ -199,8 +194,9 @@
                     <div class="field is-horizontal">
                       <div class="field-label is-normal">
                         <label class="label"
-                          >Have you ben feeling nervous or irritable; feeling
-                          sad, empty and hopeless</label
+                          >Motor Fluctuations/Dyskinesia - On and off periods of
+                          controlled motor symptoms; sudden, uncontrollable,
+                          movements.</label
                         >
                       </div>
                       <div class="select has-text-black">
@@ -216,84 +212,78 @@
                     </div>
                   </div>
                 </div>
-                <div class="step-content has-text-centered is-active">
-                  <div class="container">
-                    <h2 class="subtitle"></h2>
-                    <div class="container" id="tapTarget">
-                      <div class="card">
-                        <div class="card-content">
-                          <h3 class="subtitle">
-                            Tap on this box whenever you're ready, and then tap
-                            when the background color changes. The test will be
-                            repeated 3 times and there's a counter to help you
-                            out!
-                          </h3>
-
-                          <p id="printReactionTime"></p>
-                          <p id="countTime"></p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="container" style="padding: 30%;"></div>
-                  </div>
-                </div>
 
                 <div class="step-content has-text-centered is-active">
-                  <div class="container">
-                    <h2 class="subtitle"></h2>
-                    <div class="container">
-                      <div class="text-center">
-                        <h5 class="subtitle">
-                          Trace the Spiral below as best as you can in a single
-                          go
-                        </h5>
-                      </div>
-                      <div
-                        class="container"
-                        style="padding-top: 10%; padding-bottom: 10%;"
+                  <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                      <label class="label"
+                        >Fatigue/Sleep Disturbances - Difficulty falling asleep
+                        or staying asleep; vivid dreams; daytime
+                        sleepiness.</label
                       >
-                        <canvas id="sketchpad"></canvas>
+                    </div>
+                    <div class="select has-text-black">
+                      <select id="q1">
+                        <option value="0">Never</option>
+                        <option value="1">Rarely</option>
+                        <option value="2">Occasionally</option>
+                        <option value="3">Sometimes</option>
+                        <option value="4">Frequently</option>
+                        <option value="5">Always</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                      <label class="label"
+                        >Anxiety/Depression/Memory - Feeling nervous or
+                        irritable; feelign sad, empty and hopeless</label
+                      >
+                    </div>
+                    <div class="select has-text-black">
+                      <select id="q2">
+                        <option value="0">Never</option>
+                        <option value="1">Rarely</option>
+                        <option value="2">Occasionally</option>
+                        <option value="3">Sometimes</option>
+                        <option value="4">Frequently</option>
+                        <option value="5">Always</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                      <label class="label"
+                        >Swallowing - Difficulty swallowing; drolling; excessive
+                        saliva in the mouth</label
+                      >
+                    </div>
+                    <div class="select has-text-black">
+                      <select id="q3">
+                        <option value="0">Never</option>
+                        <option value="1">Rarely</option>
+                        <option value="2">Occasionally</option>
+                        <option value="3">Sometimes</option>
+                        <option value="4">Frequently</option>
+                        <option value="5">Always</option>
+                      </select>
+                    </div>
+                    <div class="field is-horizontal">
+                      <div class="field-label is-normal">
+                        <label class="label"
+                          >Gastrointestinal Issues/Constipation - Nausea;
+                          vomiting; diarrhea; infrequent bowel movements.</label
+                        >
                       </div>
-                      <div class="columns is-mobile">
-                        <div class="column">
-                          <button class="button" id="undo">Undo</button>
-                        </div>
-                        <div class="column">
-                          <button class="button" id="redo">Redo</button>
-                        </div>
-                        <div class="column">
-                          <button class="button" id="clear">Clear</button>
-                        </div>
-                        <div class="column">
-                          <button
-                            type="button"
-                            id="download"
-                            class="button is-dark"
-                          >
-                            Save
-                          </button>
-                        </div>
-                      </div>
-                      <div class="columns is-mobile">
-                        <div class="column">
-                          <div class="control">
-                            <input
-                              class="input has-text-black"
-                              type="text"
-                              placeholder="Enter your %"
-                              id="percent"
-                            />
-                          </div>
-                        </div>
-                        <div class="column">
-                          <button
-                            type="button"
-                            id="saver"
-                            class="button is-dark"
-                          >
-                            submit
-                          </button>
-                        </div>
+                      <div class="select has-text-black">
+                        <select id="q4">
+                          <option value="0">Never</option>
+                          <option value="1">Rarely</option>
+                          <option value="2">Occasionally</option>
+                          <option value="3">Sometimes</option>
+                          <option value="4">Frequently</option>
+                          <option value="5">Always</option>
+                        </select>
                       </div>
                     </div>
                   </div>
@@ -303,8 +293,8 @@
                   <div class="field is-horizontal">
                     <div class="field-label is-normal">
                       <label class="label"
-                        >Have you had difficulty swallowing; drooling; excessive
-                        saliva in the mouth</label
+                        >Sexual Concerns - Changes in sexual desire; erectile
+                        dysfunction.</label
                       >
                     </div>
                     <div class="select has-text-black">
@@ -321,8 +311,8 @@
                   <div class="field is-horizontal">
                     <div class="field-label is-normal">
                       <label class="label"
-                        >Are any of the following frequent occurrences: Nausea,
-                        vomiting, diarrhea, infrequent bowel movements</label
+                        >Hallucinations - Seeing, hearing or sensing things that
+                        are not there</label
                       >
                     </div>
                     <div class="select has-text-black">
@@ -339,8 +329,7 @@
                   <div class="field is-horizontal">
                     <div class="field-label is-normal">
                       <label class="label"
-                        >Have you had changes or issues in sexual desire such as
-                        erectile dysfunction etc.</label
+                        >Delusions - Believing things that are not true</label
                       >
                     </div>
                     <div class="select has-text-black">
@@ -353,51 +342,6 @@
                         <option value="5">Always</option>
                       </select>
                     </div>
-                  </div>
-                  <div class="field is-horizontal">
-                    <div class="field-label is-normal">
-                      <label class="label"
-                        >Have you been seeing, hearing or sensing things that
-                        are not there</label
-                      >
-                    </div>
-                    <div class="select has-text-black">
-                      <select id="q8">
-                        <option value="0">Never</option>
-                        <option value="1">Rarely</option>
-                        <option value="2">Occasionally</option>
-                        <option value="3">Sometimes</option>
-                        <option value="4">Frequently</option>
-                        <option value="5">Always</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="field is-horizontal">
-                    <div class="field-label is-normal">
-                      <label class="label"
-                        >Have you ever had trouble with believing things that
-                        are not true</label
-                      >
-                    </div>
-                    <div class="select has-text-black">
-                      <select id="q9">
-                        <option value="0">Never</option>
-                        <option value="1">Rarely</option>
-                        <option value="2">Occasionally</option>
-                        <option value="3">Sometimes</option>
-                        <option value="4">Frequently</option>
-                        <option value="5">Always</option>
-                      </select>
-                    </div>
-                    <br /><br />
-                    <a href="{{ url_for('results') }}">
-                      <button type="button" id="results" class="button is-dark">
-                        Results
-                      </button>
-                    </a>
-                    <button type="button" id="finalize" class="button is-dark">
-                      Submit
-                    </button>
                   </div>
                 </div>
               </div>
