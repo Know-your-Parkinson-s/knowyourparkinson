@@ -1,7 +1,7 @@
 var pad = new Sketchpad({
   element: "#sketchpad",
   width: 350,
-  height: 350
+  height: 350,
 });
 
 pad.color = "#000";
@@ -25,13 +25,13 @@ function clear() {
 }
 document.getElementById("clear").onclick = clear;
 
-document.getElementById("download").onclick = function() {
-  document.getElementById("sketchpad").toBlob(function(blob) {
+document.getElementById("download").onclick = function () {
+  document.getElementById("sketchpad").toBlob(function (blob) {
     saveAs(blob, "spiral.jpg");
   });
 };
 
-document.getElementById("saver").onclick = function() {
+document.getElementById("saver").onclick = function () {
   val = document.getElementById("percent").value;
 
   var pdata = { percent: parseInt(val) };
@@ -39,8 +39,9 @@ document.getElementById("saver").onclick = function() {
   fetch("/test/", {
     method: "POST",
     headers: {
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
     },
-    body: JSON.stringify(pdata)
+    body: JSON.stringify(pdata),
   });
+  document.getElementById("nextButton").click();
 };
