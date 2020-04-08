@@ -16,44 +16,19 @@ def index():
     return render_template("index.html", title='Home')
 
 
-@app.route("/reaction/", methods=['GET', 'POST'])
-def reaction():
-    if request.method == 'POST':
-        val = request.get_json()
-        session['val'] = val
-        print(val)
-    ua = request.headers.get('User-Agent')
-    device = SoftwareDetector(ua).parse()
-    age = session['age']
-    return render_template('reaction.html',
-                           age=age,
-                           ua=device.os_name(),
-                           title='Reaction')
-
-
 @app.route("/test/", methods=['GET', 'POST'])
 def test():
     if request.method == 'POST':
         data = request.get_json()
         if 'values' in data:
             session['val'] = data['values']
-            print(data)
         if 'motorScore' in data:
             session['motor'] = data['motorScore']
             session['mental'] = data['mentalScore']
             session['other'] = data['other']
-            print(data)
         if 'percent' in data:
             session['percent'] = data['percent']
-            print(data)
     return render_template('test.html', title='Symptom Tracker')
-
-
-@app.route("/tremor/", methods=['GET', 'POST'])
-def tremor():
-    ua = request.headers.get('User-Agent')
-    device = SoftwareDetector(ua).parse()
-    return render_template('tremor.html', title='Tremor')
 
 
 @app.route("/results/")
@@ -62,8 +37,6 @@ def results():
     motor = session['motor']
     mental = session['mental']
     other = session['other']
-    val = session['val']
-    percent = session['percent']
 
     resultText = "Thank you for taking the test!"
 
