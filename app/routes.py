@@ -38,8 +38,10 @@ def test():
         if 'values' in data:
             session['val'] = data['values']
             print(data)
-        if 'score' in data:
-            session['score'] = data['score']
+        if 'motorScore' in data:
+            session['motor'] = data['motorScore']
+            session['mental'] = data['mentalScore']
+            session['other'] = data['other']
             print(data)
         if 'percent' in data:
             session['percent'] = data['percent']
@@ -57,66 +59,19 @@ def tremor():
 @app.route("/results/")
 def results():
     age = session['age']
-    score = session['score']
+    motor = session['motor']
+    mental = session['mental']
+    other = session['other']
     val = session['val']
     percent = session['percent']
 
-    avg = statistics.mean(val)
-    if avg < 200:
-        pass
-    elif avg < 350:
-        score += 1
-    elif avg < 450:
-        score += 2
-    elif avg < 550:
-        score += 3
-    elif avg < 650:
-        score += 4
-    else:
-        score += 5
-
-    if int(percent) > 85:
-        pass
-    elif int(percent) > 70:
-        score += 1
-    elif int(percent) < 65:
-        score += 2
-    elif int(percent) < 60:
-        score += 3
-    elif int(percent) < 50:
-        score += 4
-    else:
-        score += 5
-
-    score = 55 - score
-
-    if age == '30':
-        if score > 45:
-            resultText = "You're doing as well as you can. Keep up the good work!"
-        elif score < 40:
-            resultText = "According to our data, your score is not as high as other people your age. You might want to focus on your health a bit more going forward :)"
-        else:
-            resultText = "Hey there! You scored well enough to be clear of all doubt, but you can be healthier and sharper yet!"
-
-    elif age == '40':
-        if score > 40:
-            resultText = "You're doing as well as you can. Keep up the good work!"
-        elif score < 35:
-            resultText = "According to our data, your score is not as high as other people your age. You might want to focus on your health a bit more going forward :)"
-        else:
-            resultText = "Hey there! You scored well enough to be clear of all doubt, but you can be healthier and sharper yet!"
-
-    else:
-        if score > 40:
-            resultText = "You're doing as well as you can. Keep up the good work!"
-        elif score < 27:
-            resultText = "According to our data, your score is not as high as other people your age. You might want to focus on your health a bit more going forward :)"
-        else:
-            resultText = "Hey there! You scored well enough to be clear of all doubt, but you can be healthier and sharper yet!"
+    resultText = "Thank you for taking the test!"
 
     return render_template('results.html',
                            title='Results',
-                           score=score,
+                           motor=motor,
+                           mental=mental,
+                           other=other,
                            resultText=resultText)
 
 

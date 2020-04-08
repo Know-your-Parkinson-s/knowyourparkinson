@@ -1,7 +1,7 @@
 var button = document.getElementById("finalize");
 document.getElementById("results").style.display = "none";
 
-button.onclick = function() {
+button.onclick = function () {
   var tot = 0;
 
   var e = document.getElementById("q1");
@@ -24,6 +24,9 @@ button.onclick = function() {
   tot += parseInt(result);
   console.log(result);
 
+  var motor = tot;
+  tot = 0;
+
   var e = document.getElementById("q5");
   var result = e.options[e.selectedIndex].value;
   tot += parseInt(result);
@@ -33,6 +36,24 @@ button.onclick = function() {
   var result = e.options[e.selectedIndex].value;
   tot += parseInt(result);
   console.log(result);
+
+  var e = document.getElementById("q9");
+  var result = e.options[e.selectedIndex].value;
+  tot += parseInt(result);
+  console.log(result);
+
+  var e = document.getElementById("q10");
+  var result = e.options[e.selectedIndex].value;
+  tot += parseInt(result);
+  console.log(result);
+
+  var e = document.getElementById("q11");
+  var result = e.options[e.selectedIndex].value;
+  tot += parseInt(result);
+  console.log(result);
+
+  var mental = tot;
+  tot = 0;
 
   var e = document.getElementById("q7");
   var result = e.options[e.selectedIndex].value;
@@ -44,19 +65,14 @@ button.onclick = function() {
   tot += parseInt(result);
   console.log(result);
 
-  var e = document.getElementById("q9");
-  var result = e.options[e.selectedIndex].value;
-  tot += parseInt(result);
-  console.log(result);
-
-  var data = { score: tot };
+  var data = { motorScore: motor, mentalScore: mental, other: tot };
 
   fetch("/test/", {
     method: "POST",
     headers: {
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
     },
-    body: JSON.stringify(data)
+    body: JSON.stringify(data),
   });
 
   document.getElementById("finalize").style.display = "none";

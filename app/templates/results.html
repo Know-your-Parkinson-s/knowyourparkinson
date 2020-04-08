@@ -269,17 +269,15 @@
     <script>
       var ctx = document.getElementById("myChart");
       var myRadarChart = new Chart(ctx, {
-        type: "doughnut",
+        type: "radar",
         data: {
-          labels: ["Score", "Deficit"],
+          labels: ["Motor", "Mental", "Other"],
           datasets: [
             {
-              data: [{{ score }}, {{ 55-score }}],
-              backgroundColor: ['#403F4C', '#EFBCD5']
+              data: [ {{ motor }}, {{ mental }}, {{ other}} ]
             }
           ],
-        },
-
+        }
       });
     </script>
 
