@@ -24,6 +24,6 @@ requests==2.24.0
 sentry-sdk==0.17.5
 six==1.15.0
 terminaltables==3.1.0
-urllib3==1.25.10
+urllib3==1.26.5
 Werkzeug==1.0.1
 yapf==0.30.0
